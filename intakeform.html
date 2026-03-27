@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pre-Training Intake Form · The Good Sweat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:    #FFFFFF;
+    --stone:    #F5F2EE;
+    --warm-mid: #C9BFB3;
+    --text:     #1C1A17;
+    --muted:    #6E6860;
+    --accent:   #B87040;
+    --border:   #E2DDD7;
+    --focus:    #1C1A17;
+    --error:    #8B3A3A;
+    --success:  #3A6B5A;
+    --brand:    #B87040;
+    --serif:    'Cormorant Garamond', Georgia, serif;
+    --sans:     'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .logo em { font-style: italic; font-weight: 300; color: var(--brand); }
+
+  /* ── PROGRESS ── */
+  .progress-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem 0;
+  }
+  .progress-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .progress-bar-track {
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--text);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .form-shell {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  /* ── INTRO CARD ── */
+  .intro-card {
+    background: var(--stone);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+  .intro-card .eyebrow {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .intro-card h1 {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  .intro-card h1 em { font-style: italic; font-weight: 300; color: var(--brand); }
+  .intro-card p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+  .privacy-note {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--warm-mid);
+    font-size: 0.82rem;
+    color: var(--muted);
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .privacy-note .lock-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    opacity: 0.55;
+  }
+
+  /* ── SECTION ── */
+  .form-section {
+    margin-bottom: 3.5rem;
+    display: none;
+    animation: fadeSlideIn 0.35s ease forwards;
+  }
+  .form-section.active { display: block; }
+
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-number {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .section-header h2 {
+    font-family: var(--serif);
+    font-size: 1.65rem;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  .section-header h2 em { font-style: italic; font-weight: 300; color: var(--brand); }
+
+  /* ── FIELD ── */
+  .field { margin-bottom: 1.75rem; }
+  label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 400;
+    margin-bottom: 0.45rem;
+    color: var(--text);
+  }
+  label .opt {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 300;
+    margin-left: 0.3rem;
+  }
+  label .req { color: var(--muted); font-weight: 300; }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid var(--border);
+    padding: 0.6rem 0 0.55rem;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  input:focus, textarea:focus, select:focus { border-bottom-color: var(--focus); }
+  input::placeholder, textarea::placeholder { color: var(--warm-mid); }
+
+  textarea {
+    resize: vertical;
+    min-height: 90px;
+    border: 1.5px solid var(--border);
+    border-radius: 3px;
+    padding: 0.75rem;
+    transition: border-color 0.2s;
+  }
+  textarea:focus { border-color: var(--focus); }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236E6860' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.25rem center;
+    padding-right: 1.5rem;
+    cursor: pointer;
+  }
+  select option { background: var(--cream); }
+
+  /* ── RADIO / CHECKBOX ── */
+  .radio-group, .check-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .radio-group.inline, .check-group.inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .radio-option, .check-option { position: relative; }
+  .radio-option input, .check-option input {
+    position: absolute;
+    opacity: 0;
+    width: 0; height: 0;
+  }
+  .radio-option label, .check-option label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding: 0.55rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 2px;
+    transition: border-color 0.15s, background 0.15s;
+    color: var(--text);
+    background: transparent;
+    margin: 0;
+    width: auto;
+  }
+  .radio-option input:checked + label,
+  .check-option input:checked + label {
+    border-color: var(--text);
+    background: var(--stone);
+  }
+  .radio-option label:hover, .check-option label:hover {
+    border-color: var(--warm-mid);
+    background: var(--stone);
+  }
+
+  /* ── SLIDER ── */
+  .slider-wrap { padding: 0.5rem 0; }
+  .slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    padding: 0;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--text);
+    cursor: pointer;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--text);
+    border: none;
+    cursor: pointer;
+  }
+  .slider-value {
+    text-align: center;
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+
+  /* ── CONDITIONAL ── */
+  .conditional {
+    display: none;
+    margin-top: 1.25rem;
+    padding: 1.5rem 1.5rem;
+    background: var(--stone);
+    border-left: 2px solid var(--warm-mid);
+    border-radius: 0 3px 3px 0;
+  }
+  .conditional.visible { display: block; }
+  .conditional .field:last-child { margin-bottom: 0; }
+
+  /* ── TWO-COL ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+  }
+  @media (max-width: 520px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ── NAVIGATION ── */
+  .form-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .btn {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.9rem 2.2rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1.5px solid transparent;
+  }
+  .btn-primary { background: var(--text); color: var(--cream); border-color: var(--text); }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-secondary { background: transparent; color: var(--muted); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--warm-mid); color: var(--text); }
+  .btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+  /* ── SUCCESS ── */
+  .success-screen {
+    display: none;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  .success-screen.visible { display: block; animation: fadeSlideIn 0.4s ease; }
+  .success-icon {
+    width: 52px; height: 52px;
+    border: 1.5px solid var(--border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 2rem;
+  }
+  .success-screen h2 {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  .success-screen h2 em { color: var(--brand); font-style: italic; font-weight: 300; }
+  .success-screen p { color: var(--muted); font-size: 0.95rem; }
+
+  /* ── VALIDATION ── */
+  .field-error {
+    font-size: 0.78rem;
+    color: var(--error);
+    margin-top: 0.35rem;
+    display: none;
+  }
+  .field.has-error input,
+  .field.has-error textarea,
+  .field.has-error select { border-color: var(--error); }
+  .field.has-error .field-error { display: block; }
+
+  /* ── CONFIRMATION ── */
+  .confirm-block {
+    background: var(--stone);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  .confirm-block .check-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .confirm-block .check-option:last-child { margin-bottom: 0; }
+  .confirm-block .check-option input[type="checkbox"] {
+    position: static;
+    opacity: 1;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    margin-top: 2px;
+    border: 1.5px solid var(--border);
+    border-radius: 2px;
+    cursor: pointer;
+    accent-color: var(--text);
+  }
+  .confirm-block .check-option label {
+    border: none;
+    padding: 0;
+    font-size: 0.88rem;
+    font-weight: 300;
+    background: transparent;
+    cursor: pointer;
+    line-height: 1.5;
+  }
+
+  /* ── FOOTER ── */
+  .footer-note {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--warm-mid);
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a class="logo" href="#">The <em>Good Sweat</em></a>
+</header>
+
+<!-- PROGRESS -->
+<div class="progress-wrap">
+  <div class="progress-label">
+    <span id="sectionLabel">Section 1 of 7</span>
+    <span id="pctLabel">14 %</span>
+  </div>
+  <div class="progress-bar-track"><div class="progress-bar-fill" id="progressFill"></div></div>
+</div>
+
+<!-- MAIN -->
+<main class="form-shell">
+
+  <!-- INTRO -->
+  <div class="intro-card" id="introCard">
+    <div class="eyebrow">Pre-Training Intake Form</div>
+    <h1>Before we <em>get started.</em></h1>
+    <p>This form helps me build your training in a way that is safe, meaningful and tailored to you from day one. There are no right or wrong answers — this is simply about getting to know you properly.</p>
+    <p>It takes around 5–10 minutes to complete. Your answers are confidential and will only ever be used for your personal training.</p>
+    <div class="privacy-note">
+      <svg class="lock-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="7" width="10" height="8" rx="1" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+      <span>Your health data is treated with full confidentiality, never shared with third parties, and used solely for your coaching. Data is stored securely and can be deleted at any time upon request.</span>
+    </div>
+  </div>
+
+  <form id="mainForm" novalidate>
+
+    <!-- ── SECTION 1: PERSONAL DETAILS ── -->
+    <div class="form-section active" id="sec1">
+      <div class="section-header">
+        <div class="section-number">01 — Personal Details</div>
+        <h2>Who are <em>you?</em></h2>
+      </div>
+
+      <div class="two-col">
+        <div class="field" data-required>
+          <label for="firstName">First name <span class="req">*</span></label>
+          <input type="text" id="firstName" name="firstName" placeholder="e.g. Anna" autocomplete="given-name" />
+          <div class="field-error">Please enter your first name.</div>
+        </div>
+        <div class="field" data-required>
+          <label for="lastName">Last name <span class="req">*</span></label>
+          <input type="text" id="lastName" name="lastName" placeholder="e.g. Smith" autocomplete="family-name" />
+          <div class="field-error">Please enter your last name.</div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="field" data-required>
+          <label for="dob">Date of birth <span class="req">*</span></label>
+          <input type="date" id="dob" name="dob" />
+          <div class="field-error">Please enter your date of birth.</div>
+        </div>
+        <div class="field" data-required>
+          <label for="phone">Phone number <span class="req">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="+43 …" autocomplete="tel" />
+          <div class="field-error">Please enter your phone number.</div>
+        </div>
+      </div>
+
+      <div class="field" data-required>
+        <label for="email">Email address <span class="req">*</span></label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" />
+        <div class="field-error">Please enter a valid email address.</div>
+      </div>
+
+      <div class="field">
+        <label for="job">Occupation / daily routine <span class="opt">(optional)</span></label>
+        <select id="job" name="job">
+          <option value="" disabled selected>Please select …</option>
+          <option>Mostly sitting (office, home office)</option>
+          <option>Mostly standing</option>
+          <option>Physically active / manual work</option>
+          <option>Very varied / mixed</option>
+          <option>Not currently working</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ── SECTION 2: GOALS ── -->
+    <div class="form-section" id="sec2">
+      <div class="section-header">
+        <div class="section-number">02 — Reason & Goals</div>
+        <h2>What brings <em>you here?</em></h2>
+      </div>
+
+      <div class="field">
+        <label for="motivation">What brings you here — and what would you like to change? <span class="opt">(optional)</span></label>
+        <textarea id="motivation" name="motivation" placeholder="e.g. more strength, less back pain, returning after a break — no right or wrong answer."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="goal8w">What would feel like a good result over the next 8–12 weeks? <span class="opt">(optional)</span></label>
+        <textarea id="goal8w" name="goal8w" placeholder="Doesn't have to be dramatic. What would genuinely feel good?"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="funcGoal">Is there something you'd like to be able to do again — in daily life or sport? <span class="opt">(optional)</span></label>
+        <textarea id="funcGoal" name="funcGoal" placeholder="e.g. climbing stairs without pain, running again, lifting, playing sport with the kids …"></textarea>
+      </div>
+    </div>
+
+    <!-- ── SECTION 3: COMPLAINTS ── -->
+    <div class="form-section" id="sec3">
+      <div class="section-header">
+        <div class="section-number">03 — Current Complaints</div>
+        <h2>How does your <em>body feel right now?</em></h2>
+      </div>
+
+      <div class="field" data-required>
+        <label>Do you currently have any pain, discomfort or functional limitations? <span class="req">*</span></label>
+        <div class="radio-group inline" id="hasPainGroup">
+          <div class="radio-option">
+            <input type="radio" name="hasPain" id="painYes" value="Yes" />
+            <label for="painYes">Yes</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" name="hasPain" id="painNo" value="No" />
+            <label for="painNo">No</label>
+          </div>
+        </div>
+        <div class="field-error">Please select an option.</div>
+      </div>
+
+      <div class="conditional" id="painDetails">
+        <div class="field">
+          <label for="painRegion">Which area of the body is affected?</label>
+          <input type="text" id="painRegion" name="painRegion" placeholder="e.g. lower back, left knee, shoulder …" />
+        </div>
+        <div class="field">
+          <label for="painSince">How long have you had these complaints?</label>
+          <input type="text" id="painSince" name="painSince" placeholder="e.g. for about 3 months, since 2022 …" />
+        </div>
+        <div class="field">
+          <label for="painCause">Was there a trigger, injury or specific event?</label>
+          <textarea id="painCause" name="painCause" placeholder="A brief description if you'd like …" style="min-height:70px;"></textarea>
+        </div>
+        <div class="field">
+          <label for="painDiag">Has a diagnosis been made? <span class="opt">(optional)</span></label>
+          <input type="text" id="painDiag" name="painDiag" placeholder="e.g. herniated disc L4/L5, meniscus tear …" />
+        </div>
+        <div class="field">
+          <label for="painScale">How severe are the complaints right now? (0 = no pain · 10 = worst imaginable pain)</label>
+          <div class="slider-wrap">
+            <div class="slider-value" id="painScaleVal">0</div>
+            <input type="range" id="painScale" name="painScale" min="0" max="10" step="1" value="0" oninput="document.getElementById('painScaleVal').textContent = this.value" />
+            <div class="slider-labels"><span>0</span><span>5</span><span>10</span></div>
+          </div>
+        </div>
+        <div class="field">
+          <label>When do the complaints occur most?</label>
+          <div class="check-group">
+            <div class="check-option"><input type="checkbox" name="painWhen" id="pw1" value="At rest" /><label for="pw1">At rest</label></div>
+            <div class="check-option"><input type="checkbox" name="painWhen" id="pw2" value="During activity" /><label for="pw2">During activity</label></div>
+            <div class="check-option"><input type="checkbox" name="painWhen" id="pw3" value="After activity" /><label for="pw3">After activity</label></div>
+            <div class="check-option"><input type="checkbox" name="painWhen" id="pw4" value="In the morning" /><label for="pw4">In the morning</label></div>
+            <div class="check-option"><input type="checkbox" name="painWhen" id="pw5" value="In the evening" /><label for="pw5">In the evening</label></div>
+            <div class="check-option"><input type="checkbox" name="painWhen" id="pw6" value="Only with specific movements" /><label for="pw6">Only with specific movements</label></div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="painWorse">What makes the complaints worse? <span class="opt">(optional)</span></label>
+          <input type="text" id="painWorse" name="painWorse" placeholder="e.g. sitting for long periods, climbing stairs …" />
+        </div>
+        <div class="field">
+          <label for="painBetter">What relieves the complaints? <span class="opt">(optional)</span></label>
+          <input type="text" id="painBetter" name="painBetter" placeholder="e.g. warmth, movement, lying down …" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 4: MEDICAL ── -->
+    <div class="form-section" id="sec4">
+      <div class="section-header">
+        <div class="section-number">04 — Medical Information</div>
+        <h2>What I need to know for <em>safe training.</em></h2>
+      </div>
+
+      <div class="field">
+        <label for="diagnoses">Are there any health conditions or diagnoses relevant to your training? <span class="opt">(optional)</span></label>
+        <textarea id="diagnoses" name="diagnoses" placeholder="e.g. high blood pressure, diabetes, heart condition, osteoporosis — only what you consider relevant."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="pastInjuries">Previous relevant injuries, surgeries or rehabilitation <span class="opt">(optional)</span></label>
+        <textarea id="pastInjuries" name="pastInjuries" placeholder="e.g. ACL surgery 2021, herniated disc 2019, hip replacement …"></textarea>
+      </div>
+
+      <div class="field" data-required>
+        <label>Are you currently receiving physiotherapy or any other treatment? <span class="req">*</span></label>
+        <div class="radio-group inline">
+          <div class="radio-option"><input type="radio" name="inTreat" id="treatYes" value="Yes" /><label for="treatYes">Yes</label></div>
+          <div class="radio-option"><input type="radio" name="inTreat" id="treatNo" value="No" /><label for="treatNo">No</label></div>
+        </div>
+        <div class="field-error">Please select an option.</div>
+      </div>
+
+      <div class="field" data-required>
+        <label>Are you currently taking any medication that may be relevant to training? <span class="req">*</span></label>
+        <div class="radio-group inline">
+          <div class="radio-option"><input type="radio" name="meds" id="medsYes" value="Yes" /><label for="medsYes">Yes</label></div>
+          <div class="radio-option"><input type="radio" name="meds" id="medsNo" value="No" /><label for="medsNo">No</label></div>
+        </div>
+        <div class="conditional" id="medsDetails">
+          <div class="field">
+            <label for="medsText">Which ones? <span class="opt">(optional)</span></label>
+            <input type="text" id="medsText" name="medsText" placeholder="e.g. blood thinners, beta blockers, cortisone — especially if they affect heart rate, blood pressure or perceived exertion" />
+          </div>
+        </div>
+        <div class="field-error">Please select an option.</div>
+      </div>
+
+      <div class="field" data-required>
+        <label>Are there any medical recommendations or load restrictions I should know about? <span class="req">*</span></label>
+        <div class="radio-group inline">
+          <div class="radio-option"><input type="radio" name="docRestrict" id="drYes" value="Yes" /><label for="drYes">Yes</label></div>
+          <div class="radio-option"><input type="radio" name="docRestrict" id="drNo" value="No" /><label for="drNo">No</label></div>
+        </div>
+        <div class="conditional" id="restrictDetails">
+          <div class="field">
+            <label for="restrictText">What has been recommended or restricted? <span class="opt">(optional)</span></label>
+            <textarea id="restrictText" name="restrictText" placeholder="Brief description …" style="min-height:70px;"></textarea>
+          </div>
+        </div>
+        <div class="field-error">Please select an option.</div>
+      </div>
+
+      <div class="field">
+        <label>Are there any known cardiovascular conditions? <span class="opt">(optional)</span></label>
+        <div class="radio-group inline">
+          <div class="radio-option"><input type="radio" name="cardio" id="cardioYes" value="Yes" /><label for="cardioYes">Yes</label></div>
+          <div class="radio-option"><input type="radio" name="cardio" id="cardioNo" value="No" /><label for="cardioNo">No</label></div>
+        </div>
+        <div class="conditional" id="cardioDetails">
+          <div class="field">
+            <label for="cardioText">What is known? <span class="opt">(optional)</span></label>
+            <input type="text" id="cardioText" name="cardioText" placeholder="e.g. heart condition, arrhythmia, dizziness, fainting episodes …" />
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Are you currently pregnant or in the postpartum period (up to approx. 1 year after birth)? <span class="opt">(optional)</span></label>
+        <div class="radio-group inline">
+          <div class="radio-option"><input type="radio" name="pregnancy" id="pregYes" value="Yes" /><label for="pregYes">Yes</label></div>
+          <div class="radio-option"><input type="radio" name="pregnancy" id="pregNo" value="No" /><label for="pregNo">No</label></div>
+          <div class="radio-option"><input type="radio" name="pregnancy" id="pregNA" value="Not applicable" /><label for="pregNA">Not applicable</label></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Has a training clearance / medical clearance already been given? <span class="opt">(optional)</span></label>
+        <div class="radio-group inline">
+          <div class="radio-option"><input type="radio" name="clearance" id="clYes" value="Yes" /><label for="clYes">Yes</label></div>
+          <div class="radio-option"><input type="radio" name="clearance" id="clPartial" value="Partial" /><label for="clPartial">Partial</label></div>
+          <div class="radio-option"><input type="radio" name="clearance" id="clNo" value="No" /><label for="clNo">No</label></div>
+          <div class="radio-option"><input type="radio" name="clearance" id="clNA" value="Not applicable" /><label for="clNA">Not applicable</label></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 5: DAILY LIFE ── -->
+    <div class="form-section" id="sec5">
+      <div class="section-header">
+        <div class="section-number">05 — Daily Life & Capacity</div>
+        <h2>How is your <em>everyday life right now?</em></h2>
+      </div>
+
+      <div class="field">
+        <label>What is currently limited or difficult? <span class="opt">(multiple answers possible)</span></label>
+        <div class="check-group">
+          <div class="check-option"><input type="checkbox" name="dailyLimits" id="dl1" value="Sitting for long periods" /><label for="dl1">Sitting for long periods</label></div>
+          <div class="check-option"><input type="checkbox" name="dailyLimits" id="dl2" value="Standing for long periods" /><label for="dl2">Standing for long periods</label></div>
+          <div class="check-option"><input type="checkbox" name="dailyLimits" id="dl3" value="Walking / running" /><label for="dl3">Walking / running</label></div>
+          <div class="check-option"><input type="checkbox" name="dailyLimits" id="dl4" value="Stairs" /><label for="dl4">Stairs</label></div>
+          <div class="check-option"><input type="checkbox" name="dailyLimits" id="dl5" value="Lifting / carrying" /><label for="dl5">Lifting / carrying</label></div>
+          <div class="check-option"><input type="checkbox" name="dailyLimits" id="dl6" value="Bending / getting up" /><label for="dl6">Bending / getting up</label></div>
+          <div class="check-option"><input type="checkbox" name="dailyLimits" id="dl7" value="Sport / exercise" /><label for="dl7">Sport / exercise</label></div>
+          <div class="check-option"><input type="checkbox" name="dailyLimits" id="dl8" value="Sleep" /><label for="dl8">Sleep</label></div>
+          <div class="check-option"><input type="checkbox" name="dailyLimits" id="dl9" value="Work / concentration" /><label for="dl9">Work / concentration</label></div>
+          <div class="check-option"><input type="checkbox" name="dailyLimits" id="dl10" value="Nothing currently limited" /><label for="dl10">Nothing currently limited</label></div>
+        </div>
+      </div>
+
+      <div class="field" data-required>
+        <label>How would you describe your current capacity in daily life? <span class="req">*</span></label>
+        <div class="radio-group">
+          <div class="radio-option"><input type="radio" name="capacity" id="cap1" value="Very good" /><label for="cap1">Very good — I feel fit and fully capable</label></div>
+          <div class="radio-option"><input type="radio" name="capacity" id="cap2" value="Good" /><label for="cap2">Good — mostly fine, with minor fluctuations</label></div>
+          <div class="radio-option"><input type="radio" name="capacity" id="cap3" value="Moderate" /><label for="cap3">Moderate — I notice clear limitations</label></div>
+          <div class="radio-option"><input type="radio" name="capacity" id="cap4" value="Limited" /><label for="cap4">Limited — I have to be careful with a lot of things</label></div>
+          <div class="radio-option"><input type="radio" name="capacity" id="cap5" value="Strongly limited" /><label for="cap5">Strongly limited — my daily life is significantly affected</label></div>
+        </div>
+        <div class="field-error">Please select an option.</div>
+      </div>
+
+      <div class="field">
+        <label>How do you typically feel after physical activity or exercise? <span class="opt">(optional)</span></label>
+        <div class="radio-group">
+          <div class="radio-option"><input type="radio" name="postExercise" id="pe1" value="Well recovered, energised" /><label for="pe1">Well recovered, energised</label></div>
+          <div class="radio-option"><input type="radio" name="postExercise" id="pe2" value="Normally tired, recover well" /><label for="pe2">Normally tired, recover well</label></div>
+          <div class="radio-option"><input type="radio" name="postExercise" id="pe3" value="Often very exhausted or overwhelmed" /><label for="pe3">Often very exhausted or overwhelmed</label></div>
+          <div class="radio-option"><input type="radio" name="postExercise" id="pe4" value="I have little experience with this" /><label for="pe4">I have little experience with this</label></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 6: MOVEMENT & TRAINING ── -->
+    <div class="form-section" id="sec6">
+      <div class="section-header">
+        <div class="section-number">06 — Movement & Training</div>
+        <h2>What are you <em>doing right now?</em></h2>
+      </div>
+
+      <div class="field" data-required>
+        <label>Are you currently doing any sport or training? <span class="req">*</span></label>
+        <div class="radio-group inline">
+          <div class="radio-option"><input type="radio" name="doSport" id="sportYes" value="Yes" /><label for="sportYes">Yes</label></div>
+          <div class="radio-option"><input type="radio" name="doSport" id="sportNo" value="No" /><label for="sportNo">No</label></div>
+        </div>
+        <div class="conditional" id="sportDetails">
+          <div class="field">
+            <label for="sportWhat">What and how often per week?</label>
+            <input type="text" id="sportWhat" name="sportWhat" placeholder="e.g. running 2x, yoga 1x, strength training 1x …" />
+          </div>
+        </div>
+        <div class="field-error">Please select an option.</div>
+      </div>
+
+      <div class="field" data-required>
+        <label>How much experience do you have with strength training? <span class="req">*</span></label>
+        <div class="radio-group">
+          <div class="radio-option"><input type="radio" name="strengthExp" id="se1" value="None" /><label for="se1">None — I'm a complete beginner</label></div>
+          <div class="radio-option"><input type="radio" name="strengthExp" id="se2" value="A little" /><label for="se2">A little — I've tried it or done it briefly</label></div>
+          <div class="radio-option"><input type="radio" name="strengthExp" id="se3" value="Some" /><label for="se3">Some — I train occasionally and know the basics</label></div>
+          <div class="radio-option"><input type="radio" name="strengthExp" id="se4" value="A lot" /><label for="se4">A lot — I train regularly and know my way around</label></div>
+        </div>
+        <div class="field-error">Please select an option.</div>
+      </div>
+
+      <div class="field">
+        <label for="unsureMovements">Are there any movements or exercises you feel unsure or uncomfortable about — or where you anticipate pain or discomfort? <span class="opt">(optional)</span></label>
+        <textarea id="unsureMovements" name="unsureMovements" placeholder="e.g. squats worry me because of my knee, overhead movements feel unsafe, bad experiences with deadlifts …" style="min-height:70px;"></textarea>
+      </div>
+
+      <div class="field" data-required>
+        <label>How often per week could you realistically train? <span class="req">*</span></label>
+        <div class="radio-group inline">
+          <div class="radio-option"><input type="radio" name="freqWeek" id="fr1" value="1x per week" /><label for="fr1">1× / week</label></div>
+          <div class="radio-option"><input type="radio" name="freqWeek" id="fr2" value="2x per week" /><label for="fr2">2× / week</label></div>
+          <div class="radio-option"><input type="radio" name="freqWeek" id="fr3" value="3x per week" /><label for="fr3">3× / week</label></div>
+          <div class="radio-option"><input type="radio" name="freqWeek" id="fr4" value="4x or more" /><label for="fr4">4× or more</label></div>
+        </div>
+        <div class="field-error">Please select an option.</div>
+      </div>
+
+      <div class="field">
+        <label for="equipment">Do you have access to any equipment at home or in a gym? <span class="opt">(optional)</span></label>
+        <input type="text" id="equipment" name="equipment" placeholder="e.g. dumbbells, resistance bands, yoga mat, gym membership …" />
+      </div>
+    </div>
+
+    <!-- ── SECTION 7: FINAL & CONFIRMATION ── -->
+    <div class="form-section" id="sec7">
+      <div class="section-header">
+        <div class="section-number">07 — Anything Else?</div>
+        <h2>Anything <em>important to add?</em></h2>
+      </div>
+
+      <div class="field">
+        <label for="mustKnow">Is there anything else I absolutely need to know for safe and effective coaching? <span class="opt">(optional)</span></label>
+        <textarea id="mustKnow" name="mustKnow" placeholder="Anything that hasn't been asked yet but feels important to you …"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="supportNeeds">Are there any fears, uncertainties or areas where you'd like extra support? <span class="opt">(optional)</span></label>
+        <textarea id="supportNeeds" name="supportNeeds" placeholder="Nothing is too small or too trivial. The more I know, the better I can support you."></textarea>
+      </div>
+
+      <div class="confirm-block">
+        <p style="font-size:0.8rem; color:var(--muted); margin-bottom:1rem; font-family:var(--sans); font-weight:300;">Please confirm the following:</p>
+        <div class="field" data-required data-checkbox>
+          <div class="check-option">
+            <input type="checkbox" id="conf1" name="conf1" />
+            <label for="conf1">I have completed this form to the best of my knowledge. <span class="req">*</span></label>
+          </div>
+          <div class="field-error">Please confirm this point.</div>
+        </div>
+        <div class="field" data-required data-checkbox>
+          <div class="check-option">
+            <input type="checkbox" id="conf2" name="conf2" />
+            <label for="conf2">I will inform my trainer of any relevant changes to my health. <span class="req">*</span></label>
+          </div>
+          <div class="field-error">Please confirm this point.</div>
+        </div>
+        <div class="field" data-required data-checkbox>
+          <div class="check-option">
+            <input type="checkbox" id="conf3" name="conf3" />
+            <label for="conf3">I understand that personal training does not replace medical or physiotherapeutic treatment. <span class="req">*</span></label>
+          </div>
+          <div class="field-error">Please confirm this point.</div>
+        </div>
+        <div class="field" data-required data-checkbox>
+          <div class="check-option">
+            <input type="checkbox" id="conf4" name="conf4" />
+            <label for="conf4">I consent to my data being stored confidentially for the purpose of my training. <span class="req">*</span></label>
+          </div>
+          <div class="field-error">Please confirm this point.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="form-nav">
+      <button type="button" class="btn btn-secondary" id="prevBtn" style="visibility:hidden" onclick="navigate(-1)">← Back</button>
+      <button type="button" class="btn btn-primary" id="nextBtn" onclick="navigate(1)">Next →</button>
+    </div>
+
+  </form>
+
+  <!-- SUCCESS -->
+  <div class="success-screen" id="successScreen">
+    <div class="success-icon">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4.5 4.5L16 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h2>Thank you, <em>all received.</em></h2>
+    <p style="margin-bottom:0.5rem;">I loved getting to know you a little better.</p>
+    <p>I'll be in touch personally before we get started together.<br/>See you soon — Nura</p>
+  </div>
+
+  <p class="footer-note">The Good Sweat · Personal Training Vienna · thegoodsweat.com</p>
+</main>
+
+<script>
+  const TOTAL = 7;
+  let current = 1;
+
+  function getSection(n) { return document.getElementById('sec' + n); }
+  function showSection(n) {
+    for (let i = 1; i <= TOTAL; i++) getSection(i).classList.remove('active');
+    getSection(n).classList.add('active');
+    updateProgress(n);
+    updateNav(n);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function updateProgress(n) {
+    const pct = Math.round((n / TOTAL) * 100);
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('sectionLabel').textContent = 'Section ' + n + ' of ' + TOTAL;
+    document.getElementById('pctLabel').textContent = pct + ' %';
+  }
+
+  function updateNav(n) {
+    const prev = document.getElementById('prevBtn');
+    const next = document.getElementById('nextBtn');
+    prev.style.visibility = n > 1 ? 'visible' : 'hidden';
+    next.textContent = n === TOTAL ? 'Submit ✓' : 'Next →';
+  }
+
+  function validateSection(n) {
+    const sec = getSection(n);
+    let valid = true;
+
+    sec.querySelectorAll('.field[data-required]').forEach(field => {
+      // Skip fields inside hidden conditionals
+      const parentConditional = field.closest('.conditional');
+      if (parentConditional && !parentConditional.classList.contains('visible')) return;
+
+      // Confirmation checkboxes
+      if (field.hasAttribute('data-checkbox')) {
+        const cb = field.querySelector('input[type="checkbox"]');
+        if (cb && !cb.checked) { field.classList.add('has-error'); valid = false; }
+        else if (cb) field.classList.remove('has-error');
+        return;
+      }
+
+      // Radio groups — only look at direct (non-conditional) radios
+      const radios = Array.from(field.querySelectorAll('input[type="radio"]')).filter(r => !r.closest('.conditional'));
+      if (radios.length > 0) {
+        const checked = radios.some(r => r.checked);
+        if (!checked) { field.classList.add('has-error'); valid = false; }
+        else field.classList.remove('has-error');
+        return;
+      }
+
+      // Text / email / tel / date
+      const input = field.querySelector('input[type="text"], input[type="email"], input[type="tel"], input[type="date"]');
+      if (input) {
+        if (!input.value.trim()) { field.classList.add('has-error'); valid = false; }
+        else field.classList.remove('has-error');
+      }
+    });
+
+    return valid;
+  }
+
+  function navigate(dir) {
+    if (dir === 1) {
+      if (!validateSection(current)) return;
+      if (current === TOTAL) { submitForm(); return; }
+      current++;
+    } else {
+      current = Math.max(1, current - 1);
+    }
+    showSection(current);
+  }
+
+  async function submitForm() {
+    const btn = document.getElementById('nextBtn');
+    btn.textContent = 'Sending …';
+    btn.disabled = true;
+
+    const form = document.getElementById('mainForm');
+    const data = new FormData(form);
+
+    const checkboxGroups = {};
+    form.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+      if (cb.name.startsWith('conf')) return;
+      if (!checkboxGroups[cb.name]) checkboxGroups[cb.name] = [];
+      checkboxGroups[cb.name].push(cb.value);
+    });
+    Object.entries(checkboxGroups).forEach(([k, v]) => {
+      data.delete(k);
+      data.append(k, v.join(', '));
+    });
+
+    try {
+      const res = await fetch('https://formspree.io/f/mkopnarv', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('introCard').style.display = 'none';
+        document.getElementById('progressFill').style.width = '100%';
+        document.getElementById('sectionLabel').textContent = 'Done';
+        document.getElementById('pctLabel').textContent = '100 %';
+        document.getElementById('successScreen').classList.add('visible');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        btn.textContent = 'Submit ✓';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or write to me directly at nura@thegoodsweat.com.');
+      }
+    } catch (e) {
+      btn.textContent = 'Submit ✓';
+      btn.disabled = false;
+      alert('No connection. Please check your internet and try again.');
+    }
+  }
+
+  document.querySelectorAll('input[name="cardio"]').forEach(r => {
+    r.addEventListener('change', () => {
+      document.getElementById('cardioDetails').classList.toggle('visible', r.value === 'Yes' && r.checked);
+    });
+  });
+
+  // ── Conditional logic ──
+  document.querySelectorAll('input[name="hasPain"]').forEach(r => {
+    r.addEventListener('change', () => {
+      document.getElementById('painDetails').classList.toggle('visible', r.value === 'Yes' && r.checked);
+    });
+  });
+
+  document.querySelectorAll('input[name="meds"]').forEach(r => {
+    r.addEventListener('change', () => {
+      document.getElementById('medsDetails').classList.toggle('visible', r.value === 'Yes' && r.checked);
+    });
+  });
+
+  document.querySelectorAll('input[name="docRestrict"]').forEach(r => {
+    r.addEventListener('change', () => {
+      document.getElementById('restrictDetails').classList.toggle('visible', r.value === 'Yes' && r.checked);
+    });
+  });
+
+  document.querySelectorAll('input[name="doSport"]').forEach(r => {
+    r.addEventListener('change', () => {
+      document.getElementById('sportDetails').classList.toggle('visible', r.value === 'Yes' && r.checked);
+    });
+  });
+
+  document.querySelectorAll('input, textarea, select').forEach(el => {
+    el.addEventListener('input', () => el.closest('.field')?.classList.remove('has-error'));
+    el.addEventListener('change', () => el.closest('.field')?.classList.remove('has-error'));
+  });
+
+  showSection(1);
+</script>
+</body>
+</html>
