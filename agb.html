@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Allgemeine Geschäftsbedingungen – The Good Sweat, Personal Training mit Nura Siddgi, Wien."/>
+<title>AGB – The Good Sweat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ivory:      #FAF7F2;
+  --nude:       #EAD7CC;
+  --nude-light: #F2E8E2;
+  --terra:      #C97C5D;
+  --terra-s:    #D98E73;
+  --cocoa:      #4B342C;
+  --cocoa-s:    #5e4238;
+  --ink:        #1F1D1B;
+  --ink-soft:   #4A3F39;
+  --ink-muted:  #8A7A72;
+  --white:      #FFFFFF;
+  --line:       rgba(75,52,44,0.12);
+  --line-light: rgba(75,52,44,0.07);
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fb: 'Jost', system-ui, sans-serif;
+  --ease: cubic-bezier(0.25, 1, 0.4, 1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--fb);background:var(--ivory);color:var(--ink);overflow-x:hidden;line-height:1.65;font-weight:300;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+
+.ctr{width:100%;max-width:1100px;margin:0 auto;padding:0 1.75rem;}
+.eyebrow{display:inline-block;font-family:var(--fb);font-size:0.6rem;font-weight:500;
+  letter-spacing:0.28em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:1.1rem;}
+.divider{width:28px;height:1px;background:var(--terra);margin:1.4rem 0;}
+
+.fade-up{opacity:0;transform:translateY(22px);
+  transition:opacity 0.85s var(--ease),transform 0.85s var(--ease);}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(250,247,242,0.96);backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);transition:box-shadow 0.4s;}
+.nav.scrolled{box-shadow:0 2px 28px rgba(74,52,39,0.07);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;
+  height:64px;padding:0 1.75rem;max-width:1100px;margin:0 auto;}
+.nav-logo{font-family:var(--fd);font-size:1.15rem;font-weight:400;
+  letter-spacing:0.04em;color:var(--cocoa);}
+.nav-logo em{font-style:italic;color:var(--terra);font-weight:300;}
+.nav-links{display:none;gap:2.5rem;align-items:center;}
+.nav-links a{font-size:0.78rem;font-weight:400;letter-spacing:0.06em;
+  color:var(--ink-soft);opacity:0.75;transition:opacity 0.2s,color 0.2s;}
+.nav-links a:hover{color:var(--cocoa);opacity:1;}
+.nav-cta{display:none;background:var(--cocoa);color:var(--ivory)!important;
+  padding:0.62rem 1.5rem;font-size:0.72rem;font-weight:500;letter-spacing:0.12em;
+  text-transform:uppercase;border:none;cursor:pointer;
+  transition:background 0.25s,transform 0.2s;}
+.nav-cta:hover{background:var(--terra);transform:translateY(-1px);}
+.burger{display:flex;flex-direction:column;gap:5px;cursor:pointer;
+  padding:6px;background:none;border:none;}
+.burger span{display:block;width:20px;height:1px;background:var(--cocoa);
+  transition:transform 0.3s,opacity 0.3s;}
+.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+.mob-nav{position:fixed;top:64px;left:0;right:0;z-index:190;
+  background:rgba(250,247,242,0.98);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;padding:1.5rem 1.75rem 2rem;gap:1.2rem;
+  transform:translateY(-110%);opacity:0;
+  transition:transform 0.42s var(--ease),opacity 0.42s var(--ease);}
+.mob-nav.open{transform:translateY(0);opacity:1;}
+.mob-nav a{font-size:0.88rem;font-weight:400;letter-spacing:0.04em;color:var(--ink-soft);}
+.mob-cta{margin-top:0.4rem;background:var(--cocoa);color:var(--ivory)!important;
+  padding:0.82rem 1.5rem;font-size:0.72rem;font-weight:500;letter-spacing:0.12em;
+  text-transform:uppercase;text-align:center;}
+.lang-btn{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.72rem;
+  font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--ink-muted);transition:color 0.2s;}
+.lang-btn:hover{color:var(--cocoa);}
+
+/* ── AGB PAGE HEADER ── */
+.agb-hero{
+  padding:9rem 0 5rem;
+  background:var(--ivory);
+  border-bottom:1px solid var(--line-light);
+}
+.agb-hero-in{
+  max-width:720px;
+}
+.agb-eyebrow{
+  display:inline-block;font-family:var(--fb);font-size:0.6rem;font-weight:500;
+  letter-spacing:0.28em;text-transform:uppercase;color:var(--terra);margin-bottom:1.2rem;
+}
+.agb-h1{
+  font-family:var(--fd);
+  font-size:clamp(2.4rem,5vw,3.8rem);
+  font-weight:300;
+  line-height:1.1;
+  color:var(--cocoa);
+  letter-spacing:-0.01em;
+  margin-bottom:1.4rem;
+}
+.agb-h1 em{font-style:italic;color:var(--terra);font-weight:300;}
+.agb-intro-text{
+  font-size:0.95rem;
+  color:var(--ink-soft);
+  line-height:1.82;
+  max-width:600px;
+}
+
+/* ── AGB BODY ── */
+.agb-body{
+  padding:6rem 0 8rem;
+}
+.agb-layout{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  max-width:720px;
+}
+.agb-block{
+  padding:2.8rem 0;
+  border-bottom:1px solid var(--line-light);
+}
+.agb-block:last-child{
+  border-bottom:none;
+}
+.agb-block-num{
+  font-family:var(--fb);
+  font-size:0.58rem;
+  font-weight:500;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:var(--terra);
+  margin-bottom:0.9rem;
+  display:block;
+}
+.agb-block h2{
+  font-family:var(--fd);
+  font-size:1.45rem;
+  font-weight:400;
+  color:var(--cocoa);
+  letter-spacing:0.01em;
+  margin-bottom:1.2rem;
+  line-height:1.25;
+}
+.agb-block p{
+  font-size:0.88rem;
+  color:var(--ink-soft);
+  line-height:1.88;
+  font-weight:300;
+}
+.agb-block p + p{
+  margin-top:0.9rem;
+}
+
+/* ── FOOTER ── */
+.footer{
+  background:var(--cocoa);
+  padding:2.4rem 0;
+}
+.footer-in{
+  display:flex;flex-direction:column;align-items:center;
+  gap:1.2rem;padding:0 1.75rem;max-width:1100px;margin:0 auto;
+}
+.f-logo{
+  font-family:var(--fd);font-size:1.1rem;font-weight:400;
+  letter-spacing:0.04em;color:rgba(250,247,242,0.75);
+}
+.f-logo em{font-style:italic;color:var(--terra);font-weight:300;}
+.f-meta{font-size:0.72rem;color:rgba(250,247,242,0.35);letter-spacing:0.06em;}
+.f-links{display:flex;gap:1.8rem;}
+.f-links a{font-size:0.72rem;color:rgba(250,247,242,0.4);letter-spacing:0.06em;
+  transition:color 0.2s;}
+.f-links a:hover{color:rgba(250,247,242,0.75);}
+
+@media(min-width:680px){
+  .nav-links{display:flex;}
+  .nav-cta{display:block;}
+  .burger{display:none;}
+  .footer-in{flex-direction:row;align-items:center;justify-content:space-between;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="https://www.thegoodsweat.com" class="nav-logo">The <em>Good Sweat</em></a>
+    <ul class="nav-links">
+      <li><a href="https://www.thegoodsweat.com/#fw">Für wen</a></li>
+      <li><a href="https://www.thegoodsweat.com/#an">Mein Ansatz</a></li>
+      <li><a href="https://www.thegoodsweat.com/#pre">Angebote &amp; Preise</a></li>
+      <li><a href="https://www.thegoodsweat.com/#abo">Über mich</a></li>
+      <li><a href="https://www.thegoodsweat.com/#faq">FAQ</a></li>
+    </ul>
+    <a href="mailto:nura@thegoodsweat.com" class="nav-cta">Anfragen</a>
+    <button class="burger" id="burger" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-nav" id="mob-nav">
+  <a href="https://www.thegoodsweat.com/#fw">Für wen</a>
+  <a href="https://www.thegoodsweat.com/#an">Mein Ansatz</a>
+  <a href="https://www.thegoodsweat.com/#pre">Angebote &amp; Preise</a>
+  <a href="https://www.thegoodsweat.com/#abo">Über mich</a>
+  <a href="https://www.thegoodsweat.com/#faq">FAQ</a>
+  <a href="mailto:nura@thegoodsweat.com" class="mob-cta">Jetzt anfragen</a>
+</div>
+
+<!-- PAGE HEADER -->
+<section class="agb-hero">
+  <div class="ctr">
+    <div class="agb-hero-in fade-up">
+      <span class="agb-eyebrow">Rechtliches</span>
+      <h1 class="agb-h1">Allgemeine<br><em>Geschäftsbedingungen</em></h1>
+      <div class="divider"></div>
+      <p class="agb-intro-text">
+        Die folgenden Bedingungen gelten für sämtliche Leistungen von
+        The Good Sweat – Personal Training mit Nura Siddgi in der jeweils aktuellen Fassung.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- AGB CONTENT -->
+<section class="agb-body">
+  <div class="ctr">
+    <div class="agb-layout">
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">01</span>
+        <h2>Geltungsbereich</h2>
+        <p>
+          Diese Allgemeinen Geschäftsbedingungen gelten für sämtliche Leistungen von
+          The Good Sweat – Personal Training mit Nura Siddgi gegenüber Kundinnen und Kunden
+          in der jeweils aktuellen Fassung.
+        </p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">02</span>
+        <h2>Leistungen</h2>
+        <p>
+          The Good Sweat – Personal Training mit Nura Siddgi bietet individuelle
+          Trainingsleistungen an, insbesondere Personal Training, Trainingsplanung,
+          Betreuung und begleitende Unterstützung im Zusammenhang mit Training und Bewegung.
+        </p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">03</span>
+        <h2>Ort der Leistung</h2>
+        <p>
+          Das Personal Training findet – je nach Angebot und individueller Vereinbarung –
+          im privaten Studio im 9. Bezirk, im Fitnessstudio der Kundin bzw. des Kunden in Wien,
+          online oder bei der Kundin bzw. dem Kunden zu Hause statt.
+        </p>
+        <p>
+          Der konkrete Ort der Leistungserbringung wird jeweils vorab individuell vereinbart.
+        </p>
+        <p>
+          Allfällige Eintritts-, Studio- oder Nutzungsgebühren externer Trainingsorte sind,
+          sofern nicht ausdrücklich anders vereinbart, von der Kundin bzw. vom Kunden selbst
+          zu tragen.
+        </p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">04</span>
+        <h2>Buchung und Zahlung</h2>
+        <p>
+          Die Buchung eines Termins oder Pakets erfolgt nach individueller Vereinbarung.
+          Ein Termin gilt erst nach schriftlicher Bestätigung und fristgerechtem
+          Zahlungseingang als verbindlich gebucht.
+        </p>
+        <p>
+          Der Rechnungsbetrag ist vor dem vereinbarten Termin per Überweisung zu bezahlen,
+          sofern nicht ausdrücklich etwas anderes vereinbart wurde.
+        </p>
+        <p>
+          Bei Paketen ist der gesamte Paketpreis vor dem ersten Termin vollständig fällig,
+          sofern keine abweichende schriftliche Vereinbarung getroffen wurde.
+        </p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">05</span>
+        <h2>Terminabsagen, Verschiebungen und Paketlaufzeit</h2>
+        <p>
+          Einzeltermine können bis spätestens 24 Stunden vor dem vereinbarten Termin
+          kostenfrei abgesagt oder verschoben werden. Erfolgt die Absage oder Verschiebung
+          weniger als 24 Stunden vor dem Termin, wird das volle Honorar verrechnet.
+        </p>
+        <p>
+          Bei Paketen können Termine bis spätestens 24 Stunden vor dem vereinbarten Termin
+          kostenfrei verschoben werden. Erfolgt die Absage oder Verschiebung weniger als
+          24 Stunden vor dem Termin, gilt die jeweilige Einheit als konsumiert.
+        </p>
+        <p>
+          Pakete sind ab dem ersten Termin für die vereinbarte Laufzeit gültig. Sofern nicht
+          ausdrücklich anders vereinbart, sind alle Einheiten innerhalb von 4 Wochen ab dem
+          ersten Termin zu konsumieren. Nicht rechtzeitig in Anspruch genommene Einheiten
+          verfallen ersatzlos.
+        </p>
+        <p>
+          In begründeten Ausnahmefällen kann aus Kulanz eine abweichende Regelung getroffen
+          werden. Ein Anspruch darauf besteht nicht.
+        </p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">06</span>
+        <h2>Pünktlichkeit</h2>
+        <p>
+          Die vereinbarte Terminzeit ist verbindlich. Verspätungen der Kundin bzw. des Kunden
+          gehen zulasten der gebuchten Zeit. Ein Anspruch auf Verlängerung des Termins besteht nicht.
+        </p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">07</span>
+        <h2>Gesundheitszustand und Eigenverantwortung</h2>
+        <p>
+          Die Kundin bzw. der Kunde bestätigt, gesund zu sein bzw.
+          The Good Sweat – Personal Training mit Nura Siddgi über bestehende Beschwerden,
+          Verletzungen, Einschränkungen, Erkrankungen, Schwangerschaften oder sonstige
+          gesundheitlich relevante Umstände vollständig und wahrheitsgemäß zu informieren.
+        </p>
+        <p>
+          Das Training erfolgt auf Grundlage der im Vorfeld gemachten Angaben. Änderungen des
+          Gesundheitszustands sind vor dem jeweiligen Termin unaufgefordert mitzuteilen.
+        </p>
+        <p>
+          Bei unklaren Beschwerden, Schmerzen, gesundheitlichen Einschränkungen oder nach
+          ärztlichen Eingriffen wird empfohlen, vor Trainingsbeginn bzw. vor Fortsetzung des
+          Trainings eine ärztliche Abklärung einzuholen.
+        </p>
+        <p>
+          The Good Sweat – Personal Training mit Nura Siddgi behält sich vor, ein Training
+          aus fachlichen oder gesundheitlichen Gründen abzulehnen, zu verschieben oder
+          abzubrechen, wenn aus Sicht der Trainerin Bedenken hinsichtlich der sicheren
+          Durchführung bestehen.
+        </p>
+        <p>Die Teilnahme am Training erfolgt eigenverantwortlich.</p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">08</span>
+        <h2>Trainingsumgebung bei Hausbesuchen</h2>
+        <p>
+          Findet das Training bei der Kundin bzw. beim Kunden zu Hause statt, ist von dieser
+          bzw. diesem eine geeignete und sichere Trainingsumgebung bereitzustellen.
+        </p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">09</span>
+        <h2>Foto- und Videoaufnahmen</h2>
+        <p>
+          Foto- und Videoaufnahmen während der Betreuung erfolgen ausschließlich nach
+          vorheriger Zustimmung der Kundin bzw. des Kunden.
+        </p>
+        <p>
+          Sie dienen ausschließlich internen Zwecken der Trainingsplanung, Bewegungsanalyse,
+          Dokumentation und Betreuung.
+        </p>
+        <p>
+          Eine Veröffentlichung, Weitergabe oder sonstige Nutzung außerhalb dieses Zwecks
+          erfolgt nicht.
+        </p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">10</span>
+        <h2>Datenschutz</h2>
+        <p>
+          Personenbezogene Daten sowie im Rahmen der Zusammenarbeit erhobene Informationen,
+          Trainingsdokumentationen, Fotos und Videoaufnahmen werden ausschließlich für Zwecke
+          der Trainingsplanung, Betreuung, Dokumentation und organisatorischen Abwicklung
+          verarbeitet.
+        </p>
+        <p>
+          Die Daten werden vertraulich behandelt und auf meinen Geräten gespeichert. Soweit
+          technische Synchronisations- oder Backup-Dienste genutzt werden, kann zusätzlich
+          eine Speicherung in geschützten Cloud- bzw. Backup-Systemen erfolgen. Eine
+          Weitergabe an Dritte erfolgt nicht, sofern sie nicht gesetzlich erforderlich ist.
+        </p>
+        <p>
+          Die Speicherung erfolgt nur so lange, wie dies für die laufende Betreuung,
+          Dokumentation, einen möglichen Wiedereinstieg, gesetzliche Aufbewahrungspflichten
+          oder die Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich
+          ist. Danach werden die Daten gelöscht, sofern keine gesetzliche Aufbewahrungspflicht
+          oder ein anderer berechtigter Grund für die weitere Speicherung besteht.
+        </p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">11</span>
+        <h2>Elektronische Kommunikation und Rechnungsübermittlung</h2>
+        <p>
+          Die Kommunikation sowie die Übermittlung von Informationen und Rechnungen können
+          elektronisch, insbesondere per E-Mail, erfolgen. Die Kundin bzw. der Kunde erklärt
+          sich mit dieser Form der Kommunikation einverstanden.
+        </p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">12</span>
+        <h2>Haftung</h2>
+        <p>
+          The Good Sweat – Personal Training mit Nura Siddgi haftet für Schäden nur bei
+          Vorsatz oder grober Fahrlässigkeit.
+        </p>
+        <p>
+          Für leichte Fahrlässigkeit wird – mit Ausnahme von Personenschäden – keine Haftung
+          übernommen.
+        </p>
+        <p>
+          Eine Haftung für Schäden, die aufgrund unrichtiger, unvollständiger oder
+          verschwiegener Angaben der Kundin bzw. des Kunden zu gesundheitlichen
+          Voraussetzungen, Beschwerden oder Einschränkungen entstehen, ist ausgeschlossen.
+        </p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">13</span>
+        <h2>Rücktrittsrecht bei Fernabsatzverträgen</h2>
+        <p>
+          Sofern ein Vertrag unter ausschließlicher Verwendung von Fernkommunikationsmitteln
+          (z. B. per E-Mail, Website, WhatsApp oder Telefon) zustande kommt und die Kundin
+          bzw. der Kunde Verbraucher:in ist, besteht grundsätzlich ein gesetzliches
+          Rücktrittsrecht von 14 Tagen ab Vertragsabschluss.
+        </p>
+        <p>
+          Verlangt die Kundin bzw. der Kunde ausdrücklich, dass die Dienstleistung bereits
+          vor Ablauf dieser 14-tägigen Rücktrittsfrist beginnt, und bestätigt sie bzw. er die
+          Kenntnis vom dadurch möglichen Verlust des Rücktrittsrechts bei vollständiger
+          Vertragserfüllung, wird mit der Leistungserbringung vorzeitig begonnen.
+        </p>
+        <p>
+          Wird die Dienstleistung innerhalb der Rücktrittsfrist bereits teilweise erbracht
+          und erfolgt dennoch ein rechtmäßiger Rücktritt, ist ein anteiliger Betrag für die
+          bis dahin erbrachte Leistung zu bezahlen, sofern die Kundin bzw. der Kunde
+          ausdrücklich verlangt hat, dass mit der Leistung vor Ablauf der Rücktrittsfrist
+          begonnen wird.
+        </p>
+        <p>Das gesetzliche Rücktrittsrecht bleibt unberührt.</p>
+      </div>
+
+      <div class="agb-block fade-up">
+        <span class="agb-block-num">14</span>
+        <h2>Schlussbestimmungen</h2>
+        <p>
+          Sollten einzelne Bestimmungen dieser AGB ganz oder teilweise unwirksam sein oder
+          werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
+        </p>
+        <p>
+          Es gilt österreichisches Recht unter Ausschluss der Verweisungsnormen. Zwingende
+          verbraucherschutzrechtliche Bestimmungen bleiben unberührt.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-in">
+    <div class="f-logo">The <em>Good Sweat</em></div>
+    <div class="f-meta">© 2026 Nura Siddgi</div>
+    <div class="f-links">
+      <a href="https://www.thegoodsweat.com">Startseite</a>
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="https://www.instagram.com/thegoodsweatco" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function() {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+var burger = document.getElementById('burger');
+var mob = document.getElementById('mob-nav');
+burger.addEventListener('click', function() {
+  burger.classList.toggle('open');
+  mob.classList.toggle('open');
+});
+document.querySelectorAll('.mob-nav a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    burger.classList.remove('open');
+    mob.classList.remove('open');
+  });
+});
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.06 });
+document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+</script>
+</body>
+</html>
