@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Datenschutzerklärung – The Good Sweat, Personal Training mit Nura Siddgi, Wien."/>
+<title>Datenschutz – The Good Sweat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ivory:      #FAF7F2;
+  --terra:      #C97C5D;
+  --cocoa:      #4B342C;
+  --ink:        #1F1D1B;
+  --ink-soft:   #4A3F39;
+  --ink-muted:  #8A7A72;
+  --line:       rgba(75,52,44,0.12);
+  --line-light: rgba(75,52,44,0.07);
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fb: 'Jost', system-ui, sans-serif;
+  --ease: cubic-bezier(0.25, 1, 0.4, 1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--fb);background:var(--ivory);color:var(--ink);
+  overflow-x:hidden;line-height:1.65;font-weight:300;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+
+.ctr{width:100%;max-width:1100px;margin:0 auto;padding:0 1.75rem;}
+.divider{width:28px;height:1px;background:var(--terra);margin:1.4rem 0;}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(250,247,242,0.96);backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);transition:box-shadow 0.4s;}
+.nav.scrolled{box-shadow:0 2px 28px rgba(74,52,39,0.07);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;
+  height:64px;padding:0 1.75rem;max-width:1100px;margin:0 auto;}
+.nav-logo{font-family:var(--fd);font-size:1.15rem;font-weight:400;
+  letter-spacing:0.04em;color:var(--cocoa);}
+.nav-logo em{font-style:italic;color:var(--terra);font-weight:300;}
+.nav-links{display:none;gap:2.5rem;align-items:center;}
+.nav-links a{font-size:0.78rem;font-weight:400;letter-spacing:0.06em;
+  color:var(--ink-soft);opacity:0.75;transition:opacity 0.2s,color 0.2s;}
+.nav-links a:hover{color:var(--cocoa);opacity:1;}
+.nav-cta{display:none;background:var(--cocoa);color:var(--ivory)!important;
+  padding:0.62rem 1.5rem;font-size:0.72rem;font-weight:500;letter-spacing:0.12em;
+  text-transform:uppercase;transition:background 0.25s;}
+.nav-cta:hover{background:var(--terra);}
+.burger{display:flex;flex-direction:column;gap:5px;cursor:pointer;
+  padding:6px;background:none;border:none;}
+.burger span{display:block;width:20px;height:1px;background:var(--cocoa);
+  transition:transform 0.3s,opacity 0.3s;}
+.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+.mob-nav{position:fixed;top:64px;left:0;right:0;z-index:190;
+  background:rgba(250,247,242,0.98);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;padding:1.5rem 1.75rem 2rem;gap:1.2rem;
+  transform:translateY(-110%);opacity:0;pointer-events:none;
+  transition:transform 0.42s var(--ease),opacity 0.42s var(--ease);}
+.mob-nav.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+.mob-nav a{font-size:0.88rem;font-weight:400;letter-spacing:0.04em;color:var(--ink-soft);}
+.mob-cta{margin-top:0.4rem;background:var(--cocoa);color:var(--ivory)!important;
+  padding:0.82rem 1.5rem;font-size:0.72rem;font-weight:500;letter-spacing:0.12em;
+  text-transform:uppercase;text-align:center;}
+
+/* ── PAGE HEADER ── */
+.page-hero{padding:9rem 0 5rem;border-bottom:1px solid var(--line-light);}
+.page-hero-in{max-width:720px;}
+.eyebrow{display:inline-block;font-family:var(--fb);font-size:0.6rem;font-weight:500;
+  letter-spacing:0.28em;text-transform:uppercase;color:var(--terra);margin-bottom:1.2rem;}
+.page-h1{font-family:var(--fd);font-size:clamp(2.4rem,5vw,3.8rem);
+  font-weight:300;line-height:1.1;color:var(--cocoa);
+  letter-spacing:-0.01em;margin-bottom:1.4rem;}
+.page-h1 em{font-style:italic;color:var(--terra);font-weight:300;}
+.page-intro{font-size:0.95rem;color:var(--ink-soft);line-height:1.82;max-width:580px;}
+
+/* ── CONTENT ── */
+.page-body{padding:6rem 0 8rem;}
+.page-layout{max-width:720px;}
+
+.ds-block{padding:2.6rem 0;border-bottom:1px solid var(--line-light);}
+.ds-block:last-child{border-bottom:none;}
+.ds-block-num{display:block;font-family:var(--fb);font-size:0.58rem;font-weight:500;
+  letter-spacing:0.3em;text-transform:uppercase;color:var(--terra);margin-bottom:0.85rem;}
+.ds-block h2{font-family:var(--fd);font-size:1.45rem;font-weight:400;
+  color:var(--cocoa);letter-spacing:0.01em;margin-bottom:1.1rem;line-height:1.25;}
+.ds-block p{font-size:0.88rem;color:var(--ink-soft);line-height:1.88;font-weight:300;}
+.ds-block p+p{margin-top:0.85rem;}
+.ds-block a{color:var(--terra);text-decoration:underline;
+  text-underline-offset:3px;transition:color 0.2s;}
+.ds-block a:hover{color:var(--cocoa);}
+
+.ds-block ul{margin-top:0.9rem;display:flex;flex-direction:column;gap:0.55rem;}
+.ds-block ul li{display:flex;align-items:baseline;gap:0.75rem;
+  font-size:0.88rem;color:var(--ink-soft);line-height:1.75;font-weight:300;}
+.ds-block ul li::before{content:'';display:block;width:14px;height:1px;
+  background:var(--terra);flex-shrink:0;margin-top:0.6rem;}
+.ds-block ul li strong{color:var(--cocoa);font-weight:400;}
+
+/* ── FOOTER ── */
+.footer{background:var(--cocoa);padding:2.8rem 1.75rem;
+  border-top:1px solid rgba(250,247,242,0.08);}
+.footer-in{max-width:1100px;margin:0 auto;
+  display:flex;flex-direction:column;gap:1.8rem;}
+.f-logo{font-family:var(--fd);font-size:1rem;font-weight:300;
+  letter-spacing:0.04em;color:rgba(250,247,242,0.85);}
+.f-logo em{font-style:italic;color:var(--terra);}
+.f-meta{font-size:0.72rem;color:rgba(245,239,231,0.28);line-height:1.7;}
+.f-links{display:flex;gap:1.8rem;flex-wrap:wrap;font-size:0.72rem;}
+.f-links a{color:rgba(245,239,231,0.28);transition:color 0.2s;}
+.f-links a:hover{color:rgba(250,247,242,0.85);}
+
+@media(min-width:700px){
+  .nav-links{display:flex;}
+  .nav-cta{display:inline-block;}
+  .burger{display:none;}
+  .mob-nav{display:none!important;}
+  .footer-in{flex-direction:row;align-items:center;justify-content:space-between;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="https://www.thegoodsweat.com" class="nav-logo">The <em>Good Sweat</em></a>
+    <ul class="nav-links">
+      <li><a href="https://www.thegoodsweat.com/#fw">Für wen</a></li>
+      <li><a href="https://www.thegoodsweat.com/#an">Mein Ansatz</a></li>
+      <li><a href="https://www.thegoodsweat.com/#pre">Angebote &amp; Preise</a></li>
+      <li><a href="https://www.thegoodsweat.com/#abo">Über mich</a></li>
+      <li><a href="https://www.thegoodsweat.com/#faq">FAQ</a></li>
+    </ul>
+    <a href="mailto:nura@thegoodsweat.com" class="nav-cta">Anfragen</a>
+    <button class="burger" id="burger" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-nav" id="mob-nav">
+  <a href="https://www.thegoodsweat.com/#fw">Für wen</a>
+  <a href="https://www.thegoodsweat.com/#an">Mein Ansatz</a>
+  <a href="https://www.thegoodsweat.com/#pre">Angebote &amp; Preise</a>
+  <a href="https://www.thegoodsweat.com/#abo">Über mich</a>
+  <a href="https://www.thegoodsweat.com/#faq">FAQ</a>
+  <a href="mailto:nura@thegoodsweat.com" class="mob-cta">Jetzt anfragen</a>
+</div>
+
+<section class="page-hero">
+  <div class="ctr">
+    <div class="page-hero-in">
+      <span class="eyebrow">Rechtliches</span>
+      <h1 class="page-h1">Datenschutz<em>erklärung</em></h1>
+      <div class="divider"></div>
+      <p class="page-intro">
+        Der Schutz personenbezogener Daten ist mir ein wichtiges Anliegen.
+        Die Verarbeitung von Daten erfolgt im Einklang mit den geltenden
+        datenschutzrechtlichen Vorschriften, insbesondere der DSGVO sowie
+        dem österreichischen Datenschutzgesetz (DSG).
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="ctr">
+    <div class="page-layout">
+
+      <div class="ds-block">
+        <span class="ds-block-num">01</span>
+        <h2>Verantwortliche</h2>
+        <p>
+          Verantwortlich für die Verarbeitung personenbezogener Daten
+          im Zusammenhang mit dieser Website ist:
+        </p>
+        <p>
+          Nura Siddgi<br/>
+          Währinger Gürtel 118/5, 1090 Wien<br/>
+          <a href="mailto:nura@thegoodsweat.com">nura@thegoodsweat.com</a>
+        </p>
+      </div>
+
+      <div class="ds-block">
+        <span class="ds-block-num">02</span>
+        <h2>Website-Bereitstellung und Hosting</h2>
+        <p>
+          Diese Website wird über GitHub Pages, einen Dienst von GitHub, Inc.,
+          bereitgestellt. Beim Aufruf der Website können durch den Hosting-Anbieter
+          technisch notwendige Zugriffsdaten verarbeitet werden, soweit dies für die
+          Bereitstellung, Sicherheit und Stabilität der Website erforderlich ist.
+          Dazu können insbesondere gehören: IP-Adresse, Datum und Uhrzeit des Zugriffs
+          sowie Informationen über den verwendeten Browser und das Gerät
+          (sogenannte Server-Log-Daten).
+        </p>
+        <p>
+          Auf diese Datenverarbeitung durch GitHub habe ich keinen unmittelbaren
+          Einfluss. Weiterführende Informationen zum Datenschutz bei GitHub Pages
+          finden sich in der Datenschutzerklärung von GitHub unter
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+             target="_blank" rel="noopener">docs.github.com</a>.
+        </p>
+      </div>
+
+      <div class="ds-block">
+        <span class="ds-block-num">03</span>
+        <h2>Keine Analyse- und Tracking-Tools</h2>
+        <p>
+          Auf dieser Website werden derzeit keine Analyse-, Tracking- oder
+          Webstatistik-Tools eingesetzt. Es werden keine Cookies zu Analyse-
+          oder Marketingzwecken gesetzt.
+        </p>
+      </div>
+
+      <div class="ds-block">
+        <span class="ds-block-num">04</span>
+        <h2>Keine Kontaktformulare</h2>
+        <p>
+          Auf dieser Website sind derzeit keine Kontaktformulare,
+          Registrierungsfunktionen oder sonstige Formulare vorhanden, über die
+          personenbezogene Daten direkt übermittelt werden könnten.
+        </p>
+      </div>
+
+      <div class="ds-block">
+        <span class="ds-block-num">05</span>
+        <h2>Kontaktaufnahme per E-Mail</h2>
+        <p>
+          Wenn Sie per E-Mail Kontakt aufnehmen, werden die von Ihnen übermittelten
+          Daten — in der Regel Name und E-Mail-Adresse sowie der Inhalt Ihrer Nachricht —
+          ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.
+        </p>
+        <p>
+          Eine Weitergabe an Dritte erfolgt nicht, sofern dies nicht gesetzlich
+          erforderlich ist. Die Daten werden gelöscht, sobald sie für den Zweck
+          der Bearbeitung nicht mehr benötigt werden und keine gesetzlichen
+          Aufbewahrungspflichten entgegenstehen.
+        </p>
+      </div>
+
+      <div class="ds-block">
+        <span class="ds-block-num">06</span>
+        <h2>Speicherdauer</h2>
+        <p>
+          Personenbezogene Daten werden nur so lange gespeichert, wie es für den
+          jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten
+          bestehen. Sobald der Zweck der Verarbeitung entfällt und keine
+          Aufbewahrungspflicht besteht, werden die Daten gelöscht.
+        </p>
+      </div>
+
+      <div class="ds-block">
+        <span class="ds-block-num">07</span>
+        <h2>Ihre Rechte</h2>
+        <p>Ihnen stehen im Rahmen der geltenden datenschutzrechtlichen Bestimmungen
+        folgende Rechte zu:</p>
+        <ul>
+          <li><strong>Auskunft</strong> — Sie können Auskunft über die von Ihnen gespeicherten personenbezogenen Daten verlangen.</li>
+          <li><strong>Berichtigung</strong> — Sie können die Berichtigung unrichtiger oder unvollständiger Daten verlangen.</li>
+          <li><strong>Löschung</strong> — Sie können unter bestimmten Voraussetzungen die Löschung Ihrer Daten verlangen.</li>
+          <li><strong>Einschränkung</strong> — Sie können in bestimmten Fällen die Einschränkung der Verarbeitung verlangen.</li>
+          <li><strong>Datenübertragbarkeit</strong> — Sie können verlangen, dass Ihnen Ihre Daten in einem strukturierten, gängigen Format übermittelt werden.</li>
+          <li><strong>Widerspruch</strong> — Sie können der Verarbeitung Ihrer Daten unter bestimmten Voraussetzungen widersprechen.</li>
+          <li><strong>Beschwerde</strong> — Sie haben das Recht, sich bei der zuständigen Datenschutzbehörde zu beschweren. In Österreich ist dies die Datenschutzbehörde (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>).</li>
+        </ul>
+      </div>
+
+      <div class="ds-block">
+        <span class="ds-block-num">08</span>
+        <h2>Kontakt für Datenschutzanfragen</h2>
+        <p>
+          Für Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte können Sie
+          sich jederzeit per E-Mail an mich wenden:
+        </p>
+        <p>
+          <a href="mailto:nura@thegoodsweat.com">nura@thegoodsweat.com</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-in">
+    <div class="f-logo">The <em>Good Sweat</em></div>
+    <div class="f-meta">© 2026 Nura Siddgi</div>
+    <div class="f-links">
+      <a href="https://www.thegoodsweat.com">Startseite</a>
+      <a href="impressum">Impressum</a>
+      <a href="agb.html">AGB</a>
+      <a href="https://www.instagram.com/thegoodsweatco" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function() {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+var burger = document.getElementById('burger');
+var mob = document.getElementById('mob-nav');
+burger.addEventListener('click', function() {
+  burger.classList.toggle('open');
+  mob.classList.toggle('open');
+});
+document.querySelectorAll('.mob-nav a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    burger.classList.remove('open');
+    mob.classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
