@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Privacy Policy – The Good Sweat, Personal Training with Nura Siddgi, Vienna."/>
+<title>Privacy Policy – The Good Sweat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ivory:      #FAF7F2;
+  --terra:      #C97C5D;
+  --cocoa:      #4B342C;
+  --ink:        #1F1D1B;
+  --ink-soft:   #4A3F39;
+  --ink-muted:  #8A7A72;
+  --line:       rgba(75,52,44,0.12);
+  --line-light: rgba(75,52,44,0.07);
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fb: 'Jost', system-ui, sans-serif;
+  --ease: cubic-bezier(0.25, 1, 0.4, 1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--fb);background:var(--ivory);color:var(--ink);
+  overflow-x:hidden;line-height:1.65;font-weight:300;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+.ctr{width:100%;max-width:1100px;margin:0 auto;padding:0 1.75rem;}
+.divider{width:28px;height:1px;background:var(--terra);margin:1.4rem 0;}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(250,247,242,0.96);backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);transition:box-shadow 0.4s;}
+.nav.scrolled{box-shadow:0 2px 28px rgba(74,52,39,0.07);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;
+  height:64px;padding:0 1.75rem;max-width:1100px;margin:0 auto;}
+.nav-logo{font-family:var(--fd);font-size:1.15rem;font-weight:400;
+  letter-spacing:0.04em;color:var(--cocoa);}
+.nav-logo em{font-style:italic;color:var(--terra);font-weight:300;}
+.nav-links{display:none;gap:2.5rem;align-items:center;}
+.nav-links a{font-size:0.78rem;font-weight:400;letter-spacing:0.06em;
+  color:var(--ink-soft);opacity:0.75;transition:opacity 0.2s,color 0.2s;}
+.nav-links a:hover{color:var(--cocoa);opacity:1;}
+.nav-cta{display:none;background:var(--cocoa);color:var(--ivory)!important;
+  padding:0.62rem 1.5rem;font-size:0.72rem;font-weight:500;letter-spacing:0.12em;
+  text-transform:uppercase;transition:background 0.25s;}
+.nav-cta:hover{background:var(--terra);}
+.lang-btn{display:inline-flex;align-items:center;gap:0.35rem;font-size:0.72rem;
+  font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--ink-muted);background:none;border:1px solid var(--line);
+  padding:0.38rem 0.8rem;transition:color 0.2s,border-color 0.2s;white-space:nowrap;}
+.lang-btn:hover{color:var(--terra);border-color:var(--terra);}
+.burger{display:flex;flex-direction:column;gap:5px;cursor:pointer;
+  padding:6px;background:none;border:none;}
+.burger span{display:block;width:20px;height:1px;background:var(--cocoa);
+  transition:transform 0.3s,opacity 0.3s;}
+.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+.mob-nav{position:fixed;top:64px;left:0;right:0;z-index:190;
+  background:rgba(250,247,242,0.98);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;padding:1.5rem 1.75rem 2rem;gap:1.2rem;
+  transform:translateY(-110%);opacity:0;pointer-events:none;
+  transition:transform 0.42s var(--ease),opacity 0.42s var(--ease);}
+.mob-nav.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+.mob-nav a{font-size:0.88rem;font-weight:400;letter-spacing:0.04em;color:var(--ink-soft);}
+.mob-cta{margin-top:0.4rem;background:var(--cocoa);color:var(--ivory)!important;
+  padding:0.82rem 1.5rem;font-size:0.72rem;font-weight:500;letter-spacing:0.12em;
+  text-transform:uppercase;text-align:center;}
+
+/* ── PAGE ── */
+.page-hero{padding:9rem 0 5rem;border-bottom:1px solid var(--line-light);}
+.page-hero-in{max-width:720px;}
+.eyebrow{display:inline-block;font-family:var(--fb);font-size:0.6rem;font-weight:500;
+  letter-spacing:0.28em;text-transform:uppercase;color:var(--terra);margin-bottom:1.2rem;}
+.page-h1{font-family:var(--fd);font-size:clamp(2.4rem,5vw,3.8rem);
+  font-weight:300;line-height:1.1;color:var(--cocoa);letter-spacing:-0.01em;margin-bottom:1.4rem;}
+.page-h1 em{font-style:italic;color:var(--terra);font-weight:300;}
+.page-intro{font-size:0.95rem;color:var(--ink-soft);line-height:1.82;max-width:580px;}
+.page-body{padding:6rem 0 8rem;}
+.page-layout{max-width:720px;}
+
+.blk{padding:2.6rem 0;border-bottom:1px solid var(--line-light);}
+.blk:last-child{border-bottom:none;}
+.blk-num{display:block;font-family:var(--fb);font-size:0.58rem;font-weight:500;
+  letter-spacing:0.3em;text-transform:uppercase;color:var(--terra);margin-bottom:0.85rem;}
+.blk h2{font-family:var(--fd);font-size:1.45rem;font-weight:400;
+  color:var(--cocoa);letter-spacing:0.01em;margin-bottom:1.1rem;line-height:1.25;}
+.blk p{font-size:0.88rem;color:var(--ink-soft);line-height:1.88;font-weight:300;}
+.blk p+p{margin-top:0.85rem;}
+.blk a{color:var(--terra);text-decoration:underline;
+  text-underline-offset:3px;transition:color 0.2s;}
+.blk a:hover{color:var(--cocoa);}
+.blk ul{margin-top:0.9rem;display:flex;flex-direction:column;gap:0.55rem;}
+.blk ul li{display:flex;align-items:baseline;gap:0.75rem;
+  font-size:0.88rem;color:var(--ink-soft);line-height:1.75;font-weight:300;}
+.blk ul li::before{content:'';display:block;width:14px;height:1px;
+  background:var(--terra);flex-shrink:0;margin-top:0.6rem;}
+.blk ul li strong{color:var(--cocoa);font-weight:400;}
+
+/* ── FOOTER ── */
+.footer{background:var(--cocoa);padding:2.8rem 1.75rem;
+  border-top:1px solid rgba(250,247,242,0.08);}
+.footer-in{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:1.8rem;}
+.f-logo{font-family:var(--fd);font-size:1rem;font-weight:300;
+  letter-spacing:0.04em;color:rgba(250,247,242,0.85);}
+.f-logo em{font-style:italic;color:var(--terra);}
+.f-meta{font-size:0.72rem;color:rgba(245,239,231,0.28);line-height:1.7;}
+.f-links{display:flex;gap:1.8rem;flex-wrap:wrap;font-size:0.72rem;}
+.f-links a{color:rgba(245,239,231,0.28);transition:color 0.2s;}
+.f-links a:hover{color:rgba(250,247,242,0.85);}
+
+@media(min-width:700px){
+  .nav-links{display:flex;}
+  .nav-cta{display:inline-block;}
+  .burger{display:none;}
+  .mob-nav{display:none!important;}
+  .footer-in{flex-direction:row;align-items:center;justify-content:space-between;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="https://www.thegoodsweat.com/en.html" class="nav-logo">The <em>Good Sweat</em></a>
+    <ul class="nav-links">
+      <li><a href="https://www.thegoodsweat.com/en.html#fw">For whom</a></li>
+      <li><a href="https://www.thegoodsweat.com/en.html#an">My approach</a></li>
+      <li><a href="https://www.thegoodsweat.com/en.html#pre">Offers &amp; Pricing</a></li>
+      <li><a href="https://www.thegoodsweat.com/en.html#abo">About me</a></li>
+      <li><a href="https://www.thegoodsweat.com/en.html#faq">FAQ</a></li>
+    </ul>
+    <a href="https://www.thegoodsweat.com" class="lang-btn">DE</a>
+    <a href="mailto:nura@thegoodsweat.com" class="nav-cta">Get in touch</a>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-nav" id="mob-nav">
+  <a href="https://www.thegoodsweat.com/en.html#fw">For whom</a>
+  <a href="https://www.thegoodsweat.com/en.html#an">My approach</a>
+  <a href="https://www.thegoodsweat.com/en.html#pre">Offers &amp; Pricing</a>
+  <a href="https://www.thegoodsweat.com/en.html#abo">About me</a>
+  <a href="https://www.thegoodsweat.com/en.html#faq">FAQ</a>
+  <a href="mailto:nura@thegoodsweat.com" class="mob-cta">Get in touch</a>
+</div>
+
+<section class="page-hero">
+  <div class="ctr">
+    <div class="page-hero-in">
+      <span class="eyebrow">Legal</span>
+      <h1 class="page-h1">Privacy <em>Policy</em></h1>
+      <div class="divider"></div>
+      <p class="page-intro">
+        Protecting your personal data is important to me. Any processing of data
+        takes place in accordance with applicable data protection regulations,
+        in particular the GDPR and the Austrian Data Protection Act (DSG).
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="ctr">
+    <div class="page-layout">
+
+      <div class="blk">
+        <span class="blk-num">01</span>
+        <h2>Controller</h2>
+        <p>The controller responsible for data processing in connection with this website is:</p>
+        <p>
+          Nura Siddgi<br/>
+          Währinger Gürtel 118/5, 1090 Vienna, Austria<br/>
+          <a href="mailto:nura@thegoodsweat.com">nura@thegoodsweat.com</a>
+        </p>
+      </div>
+
+      <div class="blk">
+        <span class="blk-num">02</span>
+        <h2>Website hosting</h2>
+        <p>
+          This website is hosted via GitHub Pages, a service provided by GitHub, Inc.
+          When you visit the website, technically necessary access data may be processed
+          by the hosting provider to the extent required for the provision, security and
+          stability of the website. This may include in particular: IP address, date and
+          time of access, as well as information about the browser and device used
+          (so-called server log data).
+        </p>
+        <p>
+          I have no direct influence over this data processing by GitHub. For more
+          information on GitHub's privacy practices, please refer to GitHub's privacy
+          statement at
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+             target="_blank" rel="noopener">docs.github.com</a>.
+        </p>
+      </div>
+
+      <div class="blk">
+        <span class="blk-num">03</span>
+        <h2>No analytics or tracking</h2>
+        <p>
+          This website currently does not use any analytics, tracking or web
+          statistics tools. No cookies are set for analytical or marketing purposes.
+        </p>
+      </div>
+
+      <div class="blk">
+        <span class="blk-num">04</span>
+        <h2>No contact forms</h2>
+        <p>
+          This website currently has no contact forms, registration functions or
+          any other forms through which personal data could be submitted directly.
+        </p>
+      </div>
+
+      <div class="blk">
+        <span class="blk-num">05</span>
+        <h2>Contact by e-mail</h2>
+        <p>
+          If you contact me by e-mail, the data you provide — typically your name,
+          e-mail address and the content of your message — will be used solely to
+          process your enquiry.
+        </p>
+        <p>
+          Your data will not be passed on to third parties unless required by law.
+          It will be deleted once the purpose for which it was collected no longer
+          applies and no statutory retention obligations exist.
+        </p>
+      </div>
+
+      <div class="blk">
+        <span class="blk-num">06</span>
+        <h2>Retention period</h2>
+        <p>
+          Personal data is retained only for as long as necessary for the relevant
+          purpose or as required by statutory retention obligations. Once the purpose
+          for processing no longer applies and no retention obligation exists,
+          the data will be deleted.
+        </p>
+      </div>
+
+      <div class="blk">
+        <span class="blk-num">07</span>
+        <h2>Your rights</h2>
+        <p>Under applicable data protection law, you have the following rights:</p>
+        <ul>
+          <li><strong>Access</strong> — You may request information about the personal data held about you.</li>
+          <li><strong>Rectification</strong> — You may request the correction of inaccurate or incomplete data.</li>
+          <li><strong>Erasure</strong> — You may request the deletion of your data under certain conditions.</li>
+          <li><strong>Restriction</strong> — You may request the restriction of processing in certain cases.</li>
+          <li><strong>Data portability</strong> — You may request that your data be provided to you in a structured, commonly used format.</li>
+          <li><strong>Objection</strong> — You may object to the processing of your data under certain conditions.</li>
+          <li><strong>Complaint</strong> — You have the right to lodge a complaint with the competent data protection authority. In Austria, this is the Datenschutzbehörde (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>).</li>
+        </ul>
+      </div>
+
+      <div class="blk">
+        <span class="blk-num">08</span>
+        <h2>Contact for privacy enquiries</h2>
+        <p>
+          For any questions regarding data protection or to exercise your rights,
+          please contact me at any time by e-mail:
+        </p>
+        <p><a href="mailto:nura@thegoodsweat.com">nura@thegoodsweat.com</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-in">
+    <div class="f-logo">The <em>Good Sweat</em></div>
+    <div class="f-meta">© 2026 Nura Siddgi</div>
+    <div class="f-links">
+      <a href="https://www.thegoodsweat.com/en.html">Home</a>
+      <a href="legal-notice.html">Legal Notice</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="https://www.instagram.com/thegoodsweatco" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function() {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+var burger = document.getElementById('burger');
+var mob = document.getElementById('mob-nav');
+burger.addEventListener('click', function() {
+  burger.classList.toggle('open');
+  mob.classList.toggle('open');
+});
+document.querySelectorAll('.mob-nav a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    burger.classList.remove('open');
+    mob.classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
