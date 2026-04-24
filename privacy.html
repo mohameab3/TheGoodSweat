@@ -97,11 +97,11 @@ ul{list-style:none;}
 .blk a{color:var(--terra);text-decoration:underline;
   text-underline-offset:3px;transition:color 0.2s;}
 .blk a:hover{color:var(--cocoa);}
-.blk ul{margin-top:0.9rem;display:flex;flex-direction:column;gap:0.55rem;}
-.blk ul li{display:flex;align-items:baseline;gap:0.75rem;
+.blk ul{margin-top:0.9rem;display:flex;flex-direction:column;gap:0.75rem;}
+.blk ul li{position:relative;padding-left:24px;
   font-size:0.88rem;color:var(--ink-soft);line-height:1.75;font-weight:300;}
-.blk ul li::before{content:'';display:block;width:14px;height:1px;
-  background:var(--terra);flex-shrink:0;margin-top:0.6rem;}
+.blk ul li::before{content:'';position:absolute;left:0;top:0.65rem;
+  width:14px;height:1px;background:var(--terra);}
 .blk ul li strong{color:var(--cocoa);font-weight:400;}
 
 /* ── FOOTER ── */
@@ -255,9 +255,16 @@ ul{list-style:none;}
           TLS encryption, which is standard with most common providers).
         </p>
         <p>
-          My email account is hosted with IONOS SE (Elgendorfer Str. 57, 56410 Montabaur,
-          Germany), a provider based in the EU and compliant with the GDPR. Incoming
-          messages are stored exclusively on servers in Germany.
+          My email inbox is hosted with <strong>Microsoft 365</strong> (Microsoft Ireland
+          Operations Ltd., One Microsoft Place, South County Business Park, Leopardstown,
+          Dublin 18, Ireland). Incoming emails and attachments are processed and stored
+          on servers within the European Union. In individual cases, Microsoft may transfer
+          personal data to third countries for administrative and support purposes;
+          Microsoft has put in place appropriate safeguards in accordance with Chapter V
+          of the GDPR (in particular EU Standard Contractual Clauses and the EU-US Data
+          Privacy Framework). A Data Processing Agreement (DPA) pursuant to Art. 28 GDPR
+          is in place with Microsoft as part of the Microsoft Product Terms (Online
+          Services Data Protection Addendum).
         </p>
       </div>
 

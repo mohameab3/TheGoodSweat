@@ -97,11 +97,11 @@ ul{list-style:none;}
   text-underline-offset:3px;transition:color 0.2s;}
 .ds-block a:hover{color:var(--cocoa);}
 
-.ds-block ul{margin-top:0.9rem;display:flex;flex-direction:column;gap:0.55rem;}
-.ds-block ul li{display:flex;align-items:baseline;gap:0.75rem;
+.ds-block ul{margin-top:0.9rem;display:flex;flex-direction:column;gap:0.75rem;}
+.ds-block ul li{position:relative;padding-left:24px;
   font-size:0.88rem;color:var(--ink-soft);line-height:1.75;font-weight:300;}
-.ds-block ul li::before{content:'';display:block;width:14px;height:1px;
-  background:var(--terra);flex-shrink:0;margin-top:0.6rem;}
+.ds-block ul li::before{content:'';position:absolute;left:0;top:0.65rem;
+  width:14px;height:1px;background:var(--terra);}
 .ds-block ul li strong{color:var(--cocoa);font-weight:400;}
 
 /* ── FOOTER ── */
@@ -266,10 +266,16 @@ ul{list-style:none;}
           Anbietern Standard) zu verwenden.
         </p>
         <p>
-          Mein E-Mail-Konto liegt bei IONOS SE (Elgendorfer Str. 57, 56410 Montabaur,
-          Deutschland), einem in der EU ansässigen und DSGVO-konformen Anbieter.
-          Eingehende Nachrichten werden ausschließlich auf Servern in Deutschland
-          gespeichert.
+          Mein E-Mail-Postfach wird bei <strong>Microsoft 365</strong> (Microsoft Ireland
+          Operations Ltd., One Microsoft Place, South County Business Park, Leopardstown,
+          Dublin 18, Irland) gehostet. Eingehende E-Mails und Anhänge werden auf Servern
+          innerhalb der Europäischen Union verarbeitet und gespeichert. Microsoft kann
+          in Einzelfällen personenbezogene Daten zu administrativen und Supportzwecken
+          auch in Drittländer übermitteln; hierfür hat Microsoft geeignete Garantien
+          nach Kapitel V der DSGVO (insbesondere EU-Standardvertragsklauseln und das
+          EU-US Data Privacy Framework) eingerichtet. Mit Microsoft besteht ein
+          Auftragsverarbeitungsvertrag (AVV) nach Art. 28 DSGVO als Teil der
+          Microsoft-Produktbestimmungen (Online Services Data Protection Addendum).
         </p>
       </div>
 
@@ -369,7 +375,7 @@ ul{list-style:none;}
     <div class="f-meta">© 2026 Nura Siddgi</div>
     <div class="f-links">
       <a href="https://www.thegoodsweat.com">Startseite</a>
-      <a href="impressum">Impressum</a>
+      <a href="impressum.html">Impressum</a>
       <a href="agb.html">AGB</a>
       <a href="https://www.instagram.com/thegoodsweatco" target="_blank" rel="noopener">Instagram</a>
     </div>
