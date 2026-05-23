@@ -118,6 +118,68 @@ h3{font-size:16px;line-height:1.3;font-weight:500}
 .quest-task.done .qt-tick{background:var(--accent);color:#fff}
 .quest-task.done span:last-child{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:var(--muted-soft)}
 
+/* ===== Deadline card ===== */
+.deadline-card{padding:14px}
+.deadline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+@media(max-width:480px){.deadline-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+.deadline-cell{padding:8px 6px;text-align:center;border-right:1px solid var(--line)}
+.deadline-cell:last-child{border-right:none}
+@media(max-width:480px){.deadline-cell{border-right:none;border-bottom:1px solid var(--line);padding-bottom:10px}.deadline-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}}
+.deadline-label{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-soft);margin-bottom:4px}
+.deadline-value{font-family:'Fraunces',serif;font-weight:300;font-size:22px;line-height:1.1;color:var(--text)}
+.deadline-cell.exam .deadline-value{color:var(--accent-strong)}
+.deadline-sub{font-size:11px;color:var(--muted);margin-top:2px;font-variant-numeric:tabular-nums}
+.deadline-sub.urgent{color:var(--danger);font-weight:600}
+.deadline-sub.warn{color:var(--warn);font-weight:600}
+
+/* ===== Plan card ===== */
+.plan-card{padding:16px}
+.plan-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:14px}
+.plan-date{font-family:'Fraunces',serif;font-weight:300;font-size:22px;line-height:1.2;margin-top:2px}
+.plan-phase{font-size:11.5px;color:var(--accent-strong);font-weight:500;letter-spacing:.04em;text-transform:uppercase;margin-top:3px}
+.plan-nav{display:flex;gap:4px;flex-shrink:0}
+.plan-nav .btn{min-width:34px;padding:6px 10px;font-size:14px}
+.plan-task{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.plan-task:first-child{border-top:none;padding-top:4px}
+.pt-check{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--line-strong);flex-shrink:0;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-top:2px;background:var(--panel);transition:background .15s,border-color .15s}
+.pt-check:hover{border-color:var(--accent)}
+.pt-check.done{background:var(--accent);border-color:var(--accent);color:#fff;font-size:13px;font-weight:700}
+.pt-check.done::after{content:"✓"}
+.pt-main{flex:1;min-width:0}
+.pt-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-soft);margin-bottom:2px}
+.pt-text{font-size:14px;line-height:1.45;color:var(--text)}
+.plan-task.done .pt-text{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:var(--muted-soft)}
+.pt-action{font-size:12px;color:var(--accent);font-weight:500;background:none;border:none;padding:2px 6px;cursor:pointer;border-radius:6px;flex-shrink:0;margin-top:2px;white-space:nowrap}
+.pt-action:hover{background:var(--accent-soft)}
+.plan-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.plan-meta strong{color:var(--text);font-weight:600}
+.plan-card.exam-day{background:linear-gradient(135deg,#fff8ee 0%,#fbeede 100%);border-color:#f0d8b3}
+
+/* ===== Abgabe-Checkliste ===== */
+.abgabe-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.abgabe-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+.abgabe-item:first-child{border-top:none}
+.abgabe-item .pt-check{width:18px;height:18px;border-radius:4px;margin-top:1px}
+.abgabe-item-main{flex:1;min-width:0}
+.abgabe-item .ab-bereich{font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-soft);margin-bottom:1px}
+.abgabe-item .ab-task{line-height:1.4;color:var(--text)}
+.abgabe-item .ab-meta{font-size:11.5px;color:var(--muted);margin-top:2px}
+.abgabe-item .ab-meta.urgent{color:var(--danger);font-weight:500}
+.abgabe-item.done .ab-task{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:var(--muted-soft)}
+
+/* ===== PPT-Tracker ===== */
+.ppt-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.ppt-row:first-child{border-top:none}
+.ppt-num{font-family:'Fraunces',serif;font-weight:300;font-size:18px;color:var(--muted-soft);min-width:24px;text-align:center}
+.ppt-row.done .ppt-num{color:var(--accent)}
+.ppt-main{flex:1;min-width:0}
+.ppt-stages{display:flex;gap:5px;flex-shrink:0}
+.ppt-stage{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line-strong);background:var(--panel);cursor:pointer;font-size:10px;font-weight:600;color:var(--muted-soft);display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s,color .15s}
+.ppt-stage:hover{border-color:var(--accent)}
+.ppt-stage.done{background:var(--accent);border-color:var(--accent);color:#fff}
+.ppt-stage-label{font-size:9.5px;color:var(--muted-soft);text-transform:uppercase;letter-spacing:.04em;margin-top:1px;text-align:center;line-height:1}
+
+
 .pfad-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
 @media(max-width:480px){.pfad-mini-grid{grid-template-columns:1fr}}
 .pfad-mini{padding:11px 12px;background:var(--soft);border-radius:var(--radius-sm);border:1px solid transparent;cursor:pointer;transition:background .15s,border-color .15s;text-align:left}
@@ -270,8 +332,57 @@ h3{font-size:16px;line-height:1.3;font-weight:500}
     <div class="greet" id="greet">Guten Tag.</div>
     <div class="greet-sub" id="greetSub">Heute eine Sache. Dann darfst du Pause machen.</div>
 
-    <div class="card quest card-pad">
-      <div class="card-title">Heutige Quest</div>
+    <!-- Deadlines -->
+    <div class="card card-pad deadline-card">
+      <div class="deadline-grid">
+        <div class="deadline-cell">
+          <div class="deadline-label">Heute</div>
+          <div class="deadline-value" id="ddToday">—</div>
+          <div class="deadline-sub" id="ddTodayWeekday"></div>
+        </div>
+        <div class="deadline-cell">
+          <div class="deadline-label">Abgabe ideal</div>
+          <div class="deadline-value" id="ddIdeal">—</div>
+          <div class="deadline-sub" id="ddIdealSub"></div>
+        </div>
+        <div class="deadline-cell">
+          <div class="deadline-label">Abgabe spätest.</div>
+          <div class="deadline-value" id="ddLate">—</div>
+          <div class="deadline-sub" id="ddLateSub"></div>
+        </div>
+        <div class="deadline-cell exam">
+          <div class="deadline-label">Prüfung</div>
+          <div class="deadline-value" id="ddExam">—</div>
+          <div class="deadline-sub" id="ddExamSub"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tagesplan -->
+    <div class="card card-pad plan-card" id="planCard">
+      <div class="plan-head">
+        <div>
+          <div class="card-title">Heutiger Lernplan</div>
+          <div class="plan-date" id="planDate">—</div>
+          <div class="plan-phase" id="planPhase"></div>
+        </div>
+        <div class="plan-nav">
+          <button class="btn ghost sm" onclick="planPrev()" title="Tag zurück">‹</button>
+          <button class="btn ghost sm" onclick="planToday()" title="Heute" id="planTodayBtn">heute</button>
+          <button class="btn ghost sm" onclick="planNext()" title="Tag vor">›</button>
+        </div>
+      </div>
+
+      <div id="planTaskList"></div>
+
+      <div class="plan-meta" id="planMeta"></div>
+
+      <div class="btn-row" id="planActions" style="margin-top:14px"></div>
+    </div>
+
+    <!-- Phase-2-Quest (kept from v4) -->
+    <div class="card quest card-pad" id="todayCaseCard">
+      <div class="card-title">Heutiger Fokus-Fall</div>
       <h2 id="questHeadline">Lade …</h2>
       <div class="quest-tasks" id="questTasks"></div>
       <div class="btn-row">
@@ -282,14 +393,39 @@ h3{font-size:16px;line-height:1.3;font-weight:500}
 
     <div class="card card-pad">
       <div class="card-title">Fortschritt</div>
-      <div class="prog-row"><span class="lbl">Prio A · Pflichtthemen</span><span class="num" id="progANum">— / 28</span></div>
-      <div class="prog"><span id="progABar" style="width:0%"></span></div>
+      <div class="prog-row"><span class="lbl">Lernplan · Tage erledigt</span><span class="num" id="progDaysNum">— / 21</span></div>
+      <div class="prog"><span id="progDaysBar" style="width:0%"></span></div>
       <div class="divider"></div>
-      <div class="prog-row"><span class="lbl">Gesamt</span><span class="num" id="progAllNum">— / 160</span></div>
-      <div class="prog thin"><span id="progAllBar" style="width:0%"></span></div>
+      <div class="prog-row"><span class="lbl">Prio-A Deep Dives erledigt</span><span class="num" id="progDeepNum">— / 21</span></div>
+      <div class="prog thin"><span id="progDeepBar" style="width:0%"></span></div>
       <div class="divider"></div>
-      <div style="font-size:12.5px;color:var(--muted);margin-bottom:8px">Pfade</div>
+      <div class="prog-row"><span class="lbl">PPT-Übungen markiert</span><span class="num" id="progPptNum">— / 21</span></div>
+      <div class="prog thin"><span id="progPptBar" style="width:0%"></span></div>
+      <div class="divider"></div>
+      <div class="prog-row"><span class="lbl">Prio A · Themen prüfungsreif</span><span class="num" id="progANum">— / 28</span></div>
+      <div class="prog thin"><span id="progABar" style="width:0%"></span></div>
+      <div class="divider"></div>
+      <div style="font-size:12.5px;color:var(--muted);margin-bottom:8px">Lernpfade</div>
       <div class="pfad-mini-grid" id="pfadMiniGrid"></div>
+    </div>
+
+    <!-- Abgabe-Checkliste -->
+    <div class="card card-pad" id="abgabeCard">
+      <div class="abgabe-head">
+        <div class="card-title">Abgabe-Checkliste</div>
+        <span class="badge" id="abgabeBadge">0 / 10</span>
+      </div>
+      <div id="abgabeList"></div>
+    </div>
+
+    <!-- PPT-Tracker -->
+    <div class="card card-pad" id="pptCard">
+      <div class="abgabe-head">
+        <div class="card-title">PPT-Übungen (9 Präsentationen)</div>
+        <span class="badge" id="pptBadge">0 / 9</span>
+      </div>
+      <p class="sub" style="margin-bottom:10px">Jede PPT durchläuft 4 Stufen: 1. Durchgang → 2. Durchgang → Timer-Probe → Finalprobe.</p>
+      <div id="pptList"></div>
     </div>
 
     <div class="card card-pad" id="todayReviewsCard">
@@ -440,6 +576,12 @@ const PFADE_META = [
   { id:"functional_anatomie", name:"Übungslehre & Anatomie", sub:"Squat, Hinge, Press · Muskelfunktion",             order:7 },
   { id:"ernaehrung",          name:"Ernährung",              sub:"Grundumsatz, Makros, Hydration, Recht",            order:8 }
 ];
+
+// Lernplan: 22 Tage bis Prüfung (23.05.–13.06.2026)
+const LERNPLAN = {"days":[{"date":"2026-05-23","weekday":"Sat","phase":"Phase 1: Abgabe + Lernmotor","fokus":"Abgabe + Rücken/Haltung","deepDive":"Bandscheibenvorfall LWS","speedRound":"Tennisellenbogen: Extensoren, Griffstress, keine Bizepscurl-Falle","ppt":"PPT 1 laut + Einleitung üben","orga":"Abgabeordner anlegen; 9 PPT + 100 Pläne zählen; Versandliste erstellen","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"Abgabe absichern + 1 Deep Dive + 1 PPT laut","lernzeit":4.0},{"date":"2026-05-24","weekday":"Sun","phase":"Phase 1: Abgabe + Lernmotor","fokus":"Abgabe + Rücken/Haltung","deepDive":"Protrusion / Prolaps / Sequestration","speedRound":"Muskelfaserriss vs. Muskelzerrung: Akutlogik, PECH, kein frühes Massieren","ppt":"PPT 2 laut + roter Faden","orga":"PPTs prüfen; Trainingspläne 1–50 prüfen; Dateinamen sauber","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"Abgabe absichern + 1 Deep Dive + 1 PPT laut","lernzeit":4.0},{"date":"2026-05-25","weekday":"Mon","phase":"Phase 1: Abgabe + Lernmotor","fokus":"Abgabe + Rücken/Haltung","deepDive":"Lumbago / Hexenschuss","speedRound":"PFPS / Patellofemoraler Schmerz: Hüfte, Beinachse, Step-down","ppt":"PPT 3 laut + Timing","orga":"Trainingspläne 51–100 prüfen; ideal: ALLES ABSCHICKEN","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"Abgabe absichern + 1 Deep Dive + 1 PPT laut","lernzeit":3.0},{"date":"2026-05-26","weekday":"Tue","phase":"Phase 1: Abgabe + Lernmotor","fokus":"Abgabe + Rücken/Haltung","deepDive":"Lumboischialgie / Ischias","speedRound":"Patellaspitzensyndrom: Isometrie, slow strength, keine Sprünge früh","ppt":"PPT 4 laut + Übergänge","orga":"Puffer: Rückmeldung PTA / mögliche Themenänderung / falls nicht geschickt: jetzt schicken","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"Abgabe absichern + 1 Deep Dive + 1 PPT laut","lernzeit":3.0},{"date":"2026-05-27","weekday":"Wed","phase":"Phase 1: Abgabe + Lernmotor","fokus":"Abgabe + Rücken/Haltung","deepDive":"Spondylolisthesis / Gleitwirbel","speedRound":"Achillodynie: Sehnenlast, 24h-Reaktion, Calf Raises","ppt":"PPT 5 laut + Schluss","orga":"Abgabe nur noch nachziehen, falls offen","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"Abgabe absichern + 1 Deep Dive + 1 PPT laut","lernzeit":3.0},{"date":"2026-05-28","weekday":"Thu","phase":"Phase 1: Abgabe + Lernmotor","fokus":"Abgabe + Rücken/Haltung","deepDive":"Skoliose + Rotationsskoliose","speedRound":"Chronische OSG-Instabilität / Peroneus / Foot Tripod","ppt":"PPT 6 laut + frei sprechen","orga":"Abgabe-Puffer","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"Abgabe absichern + 1 Deep Dive + 1 PPT laut","lernzeit":3.0},{"date":"2026-05-29","weekday":"Fri","phase":"Phase 1: Abgabe + Lernmotor","fokus":"Abgabe + Rücken/Haltung","deepDive":"Rundrücken + Hohlrücken","speedRound":"Plattfuß/Senkfuß/Spreizfuß + Dorsalflexionslimit","ppt":"PPT 7 laut + kritische Stellen","orga":"Absolute Deadline-Vorbereitung: nichts Neues anfangen","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"Abgabe absichern + 1 Deep Dive + 1 PPT laut","lernzeit":3.0},{"date":"2026-05-30","weekday":"Sat","phase":"Phase 1: Abgabe + Lernmotor","fokus":"Abgabe + Rücken/Haltung","deepDive":"Totalrundrücken + Hohlrundrücken","speedRound":"Forward Head / Nacken-Schulter-Verspannung / Brustatmung","ppt":"PPT 8 laut + Timing","orga":"Absolute Deadline – nur falls noch nicht abgeschickt","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"Abgabe absichern + 1 Deep Dive + 1 PPT laut","lernzeit":2.5},{"date":"2026-05-31","weekday":"Sun","phase":"Phase 2: Prio A + Breite","fokus":"Prio A aktiv + Prio B Speed","deepDive":"Flachrücken + Morbus Scheuermann","speedRound":"Rotatorenmanschette / Supraspinatus / Überkopfschmerz","ppt":"PPT 9 laut + frei sprechen","orga":"Erholung von Abgabe, Lernfokus","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"1 Deep Dive + 1 Speed Round + 1 PPT laut","lernzeit":4.0},{"date":"2026-06-01","weekday":"Mon","phase":"Phase 2: Prio A + Breite","fokus":"Prio A aktiv + Prio B Speed","deepDive":"Morbus Bechterew + Spinalkanalstenose","speedRound":"Frozen Shoulder / AC-Gelenk / Schulterluxation kurz unterscheiden","ppt":"PPT 1–3 zweiter Durchgang","orga":"","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"1 Deep Dive + 1 Speed Round + 1 PPT laut","lernzeit":3.0},{"date":"2026-06-02","weekday":"Tue","phase":"Phase 2: Prio A + Breite","fokus":"Prio A aktiv + Prio B Speed","deepDive":"Spondylarthrose + Rückenprüfung","speedRound":"Sarkopenie + Gangunsicherheit Senior:in","ppt":"PPT 4–6 zweiter Durchgang","orga":"","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"1 Deep Dive + 1 Speed Round + 1 PPT laut","lernzeit":3.0},{"date":"2026-06-03","weekday":"Wed","phase":"Phase 2: Prio A + Breite","fokus":"Prio A aktiv + Prio B Speed","deepDive":"HTEP + KTEP","speedRound":"Adipositas / metabolisches Syndrom: gelenkschonender Einstieg","ppt":"PPT 7–9 zweiter Durchgang","orga":"","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"1 Deep Dive + 1 Speed Round + 1 PPT laut","lernzeit":3.0},{"date":"2026-06-04","weekday":"Thu","phase":"Phase 2: Prio A + Breite","fokus":"Prio A aktiv + Prio B Speed","deepDive":"Coxarthrose + Gonarthrose","speedRound":"Herzinsuffizienz / KHK-Risiko / Medikamente: Sicherheitslogik","ppt":"Schwächste 2 PPTs laut","orga":"","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"1 Deep Dive + 1 Speed Round + 1 PPT laut","lernzeit":3.0},{"date":"2026-06-05","weekday":"Fri","phase":"Phase 2: Prio A + Breite","fokus":"Prio A aktiv + Prio B Speed","deepDive":"VKB/LCA + Meniskus","speedRound":"Validität/Reliabilität/Objektivität + Borg/RPE","ppt":"PPT mit Timer: 1–3","orga":"","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"1 Deep Dive + 1 Speed Round + 1 PPT laut","lernzeit":3.0},{"date":"2026-06-06","weekday":"Sat","phase":"Phase 2: Prio A + Breite","fokus":"Prio A aktiv + Prio B Speed","deepDive":"Supinationstrauma + Schulter-Impingement","speedRound":"Blutdruckwerte + Karvonen + PWC/Cooper/Conconi grob","ppt":"PPT mit Timer: 4–6","orga":"","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"1 Deep Dive + 1 Speed Round + 1 PPT laut","lernzeit":4.0},{"date":"2026-06-07","weekday":"Sun","phase":"Phase 2: Prio A + Breite","fokus":"Prio A aktiv + Prio B Speed","deepDive":"Osteoporose/Sturzprävention + Hypertonie","speedRound":"MFT Verkürzung/Abschwächung: Tests & Skalen","ppt":"PPT mit Timer: 7–9","orga":"","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"1 Deep Dive + 1 Speed Round + 1 PPT laut","lernzeit":4.0},{"date":"2026-06-08","weekday":"Mon","phase":"Phase 2: Prio A + Breite","fokus":"Prio A aktiv + Prio B Speed","deepDive":"Diabetes Typ 2 + Belastungsasthma","speedRound":"Iliopsoas / Rectus femoris / Ischios / Pectoralis Tests","ppt":"Alle PPTs Kurzreview","orga":"","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"1 Deep Dive + 1 Speed Round + 1 PPT laut","lernzeit":3.0},{"date":"2026-06-09","weekday":"Tue","phase":"Phase 3: Simulation + Wiederholung","fokus":"Simulation + Abruf","deepDive":"Prüfungssimulation Rücken/Haltung","speedRound":"Glute med/max + Schulterblattfixatoren + Core Tests","ppt":"Schwächste 3 PPTs final","orga":"","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"1 Deep Dive + 1 Speed Round + 1 PPT laut","lernzeit":3.0},{"date":"2026-06-10","weekday":"Wed","phase":"Phase 3: Simulation + Wiederholung","fokus":"Simulation + Abruf","deepDive":"Prüfungssimulation Untere Extremität/OP","speedRound":"Trainingslehre: Reizintensität/-umfang/-dauer/-dichte/-häufigkeit","ppt":"PPT Random-Abfrage","orga":"","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"1 Deep Dive + 1 Speed Round + 1 PPT laut","lernzeit":3.0},{"date":"2026-06-11","weekday":"Thu","phase":"Phase 3: Simulation + Wiederholung","fokus":"Simulation + Abruf","deepDive":"Prüfungssimulation Internistisch/Senior","speedRound":"Energiesysteme: alaktazid/laktazid/aerob KH/aerob Fett","ppt":"Alle 9 PPTs grob durchgehen","orga":"","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"1 Deep Dive + 1 Speed Round + 1 PPT laut","lernzeit":3.0},{"date":"2026-06-12","weekday":"Fri","phase":"Phase 3: Simulation + Wiederholung","fokus":"Simulation + Abruf","deepDive":"Finale leichte Simulation + Merksätze","speedRound":"Functional Basics: Squat/RDL/Row/Press Regressionen","ppt":"Nur Einstiege + Schluss-Sätze","orga":"","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"leichte Wiederholung + Schlaf schützen","lernzeit":2.0},{"date":"2026-06-13","weekday":"Sat","phase":"Prüfung","fokus":"Simulation + Abruf","deepDive":"PRÜFUNG – kein Lernen mehr","speedRound":"","ppt":"keine PPT-Übung","orga":"Prüfungstag","wdh":"HTML fällige Wiederholungen + 3 Merksätze","minimum":"Prüfung. Kein Lernen.","lernzeit":0.0}],"abgabe":[{"bereich":"PPT","task":"Alle 9 Präsentationen öffnen und Dateinamen prüfen","zieldatum":"2026-05-24","notizen":""},{"bereich":"PPT","task":"Themen final entscheiden / ggf. ändern","zieldatum":"2026-05-24","notizen":"Falls du unsicher bist: jetzt, nicht am 30."},{"bereich":"PPT","task":"PPTs als abgabefähige Version speichern/exportieren","zieldatum":"2026-05-25","notizen":""},{"bereich":"Trainingspläne","task":"100 Trainingspläne zählen und Lesbarkeit prüfen","zieldatum":"2026-05-25","notizen":""},{"bereich":"Trainingspläne","task":"Dateinamen/Ordnerstruktur sauber","zieldatum":"2026-05-25","notizen":""},{"bereich":"Abgabe","task":"Mail/Upload vorbereiten","zieldatum":"2026-05-25","notizen":""},{"bereich":"Abgabe","task":"Idealer Versand an PTA","zieldatum":"2026-05-25","notizen":"Früh abgeben = Kopf frei + Zeit für Rückmeldung"},{"bereich":"Puffer","task":"Rückmeldung PTA / Themenänderung falls nötig","zieldatum":"2026-05-26","notizen":""},{"bereich":"Puffer","task":"Letzte Korrekturen / Nachreichung","zieldatum":"2026-05-29","notizen":""},{"bereich":"Deadline","task":"Absolute Deadline","zieldatum":"2026-05-30","notizen":"Nur noch Notfallpuffer"}],"ppts":[{"nr":1,"name":"PPT 1","thema":""},{"nr":2,"name":"PPT 2","thema":""},{"nr":3,"name":"PPT 3","thema":""},{"nr":4,"name":"PPT 4","thema":""},{"nr":5,"name":"PPT 5","thema":""},{"nr":6,"name":"PPT 6","thema":""},{"nr":7,"name":"PPT 7","thema":""},{"nr":8,"name":"PPT 8","thema":""},{"nr":9,"name":"PPT 9","thema":""}],"exam":"2026-06-13","deadlineIdeal":"2026-05-25","deadlineLate":"2026-05-30"};
+const EXAM_DATE = "2026-06-13";
+const DEADLINE_IDEAL = "2026-05-25";
+const DEADLINE_LATE  = "2026-05-30";
 
 
 /* === DIAGNOSE-TIEFE (75 Karten aus der Vorgänger-App) === */
@@ -1804,6 +1946,35 @@ const THEORIE = {
 </tbody>
 </table>
 <div class="notice info" style="margin-top:14px"><strong>Merksatz:</strong> Beim Flachrücken willst du die Krümmungen <em>dosiert zurück</em>, nicht weiter aufrichten — sonst geht die Federung der Wirbelsäule weiter verloren.</div>
+
+<h3 style="font-family:'Fraunces',serif;font-weight:300;font-size:18px;margin:24px 0 6px">Strukturelle Wirbelsäulen-Pathologien</h3>
+<p class="sub" style="margin-bottom:10px">Diese sind <strong>strukturell</strong> (Knochen/Bandscheibe) — nicht „wegtrainieren", sondern Belastung anpassen und Funktion erhalten.</p>
+
+<table class="haltung-table">
+<thead><tr><th>Pathologie</th><th>Was kräftigen / fördern</th><th>Was dehnen / mobilisieren</th><th>No-Gos</th></tr></thead>
+<tbody>
+<tr>
+  <td class="haltung-name">Skoliose / Rotationsskoliose<small>Seitabweichung ± Wirbelrotation</small></td>
+  <td class="haltung-list">Atmung (360°), Scapula Setting, Anti-Rotation (Pallof), Rumpfstabilität bilateral, Beinachse</td>
+  <td class="haltung-list">BWS-/Rippenmobilität sanft (nach Befund — Schiefseite!), Hüftbeweglichkeit</td>
+  <td class="haltung-list">Keine erzwungenen Korrekturmanöver, keine schwere asymmetrische Last ungeprüft, keine forcierte Rotation unter Last</td>
+</tr>
+<tr>
+  <td class="haltung-name">M. Scheuermann<small>juvenile Hyperkyphose, strukturell</small></td>
+  <td class="haltung-list">Rudern, Face Pull, Rückenstrecker dosiert, Core, Scapula Setting</td>
+  <td class="haltung-list">Pectoralis major/minor, Latissimus — sanft, nicht aggressiv</td>
+  <td class="haltung-list">Keine erzwungene Aufrichtung, keine aggressiven Hyper-Extensions, keine Last in forcierter Flexion</td>
+</tr>
+<tr>
+  <td class="haltung-name">M. Bechterew<small>entzündl.-rheumatisch, ankylos. Spondylitis</small></td>
+  <td class="haltung-list">Rückenstrecker, Rudern, Hüft-/Gesäßkraft, Atemmuskulatur, moderate Ausdauer</td>
+  <td class="haltung-list">Brustkorb/BWS/Hüfte sanft mobilisieren, Atemübungen</td>
+  <td class="haltung-list"><strong>Im Entzündungsschub kein Training.</strong> Keine aggressiven Mobilisationen, keine harten Stöße</td>
+</tr>
+</tbody>
+</table>
+
+<div class="notice info" style="margin-top:14px"><strong>Prüfungsanker:</strong> Bei strukturellen Pathologien (Scheuermann, Bechterew, Spondylolisthesis, Spinalkanalstenose) ist das Ziel <em>Funktion erhalten, sicher belasten, Schub vermeiden</em> — nicht „korrigieren". Den Satz sicher haben.</div>
 `
   },
 
@@ -2014,6 +2185,34 @@ arbeiten <strong>aerob UND anaerob</strong> · trainierbar in beide Richtungen<b
 </table>
 
 <div class="notice info" style="margin-top:14px"><strong>Merksatz:</strong> Borg-Wert × 10 ≈ Herzfrequenz. Borg 13 ≈ HF 130 — so kannst du schnell überprüfen, ob jemand realistisch einschätzt.</div>
+
+<h3 style="margin-top:24px;margin-bottom:6px;font-size:16px">Karvonen-Formel (individualisierte HF-Steuerung)</h3>
+<p style="font-size:13.5px;line-height:1.6">Berechnet die Zielherzfrequenz auf Basis der <strong>Herzfrequenzreserve</strong>, nicht der HFmax alleine — das ist genauer.</p>
+<div style="padding:12px 14px;background:var(--soft);border-radius:8px;font-family:ui-monospace,Menlo,monospace;font-size:13px;margin:8px 0">
+HFziel = HFruhe + (HFmax − HFruhe) × Intensitätsfaktor
+</div>
+<p style="font-size:13.5px;line-height:1.6;margin-top:6px"><strong>Beispielrechnung</strong> · 45 Jahre, HFruhe = 60, Ziel = 70 % der HFreserve:</p>
+<ul style="font-size:13.5px;line-height:1.6;margin-left:18px">
+  <li>HFmax ≈ 220 − 45 = <strong>175</strong></li>
+  <li>HFreserve = 175 − 60 = <strong>115</strong></li>
+  <li>HFziel = 60 + (115 × 0,70) = 60 + 80,5 = <strong>≈ 140 BPM</strong></li>
+</ul>
+<table style="margin-top:10px">
+<tr><th>Intensitätsfaktor</th><th>Wirkung</th><th>Einsatz</th></tr>
+<tr><td>0,50–0,60</td><td>regenerativ / Fett</td><td>Senior:in, Reha, Einsteiger</td></tr>
+<tr><td>0,60–0,75</td><td>Grundlagenausdauer</td><td>Hauptbereich Medical-PT</td></tr>
+<tr><td>0,75–0,85</td><td>aerob-anaerob</td><td>Trainierte, Wettkampf</td></tr>
+<tr><td>>0,85</td><td>anaerob</td><td>kurze Intervalle, Wettkampf</td></tr>
+</table>
+<div class="notice warn" style="margin-top:10px;padding:10px 12px;background:var(--warn-soft);border-left:3px solid var(--warn);border-radius:0 6px 6px 0;font-size:13px"><strong>Achtung Betablocker:</strong> senken HFmax. Karvonen wird unzuverlässig. → Lieber Borg/RPE als Steuerung.</div>
+
+<h3 style="margin-top:24px;margin-bottom:6px;font-size:16px">Ausdauer in der Praxis · Special Cases</h3>
+<table>
+<tr><th>Hypertonie</th><td>Moderate Intensität (50–70 % HFreserve), <strong>keine Pressatmung</strong>, gleichmäßig. Senkt langfristig den Ruheblutdruck.</td></tr>
+<tr><th>Diabetes Typ 2</th><td>Moderate Ausdauer regelmäßig (3–5 ×/Woche) verbessert <strong>Glukosetoleranz</strong>. BZ vorher/nachher, Hypo-Gefahr, Füße/Schuhe wegen Neuropathie.</td></tr>
+<tr><th>Belastungsasthma</th><td>Langes, abgestuftes Warm-up. Kurze Intervalle &lt; Dauerbelastung. <strong>Spray griffbereit.</strong> Kaltluft/trockene Luft vermeiden.</td></tr>
+<tr><th>Senior:in</th><td>Grundlagenausdauer steht im Vordergrund. Gehen, Ergometer, leichte Intervalle. Sturzsicherheit beachten — keine instabilen Untergründe früh.</td></tr>
+</table>
 `
   },
 
@@ -2137,26 +2336,41 @@ arbeiten <strong>aerob UND anaerob</strong> · trainierbar in beide Richtungen<b
   // ============================================
   algo: {
     title: "Prüfungs-Algorithmus",
-    sub: "Die Reihenfolge, mit der du jeden Fall sicher abarbeitest.",
+    sub: "11 Schritte. Diese Reihenfolge bei JEDEM Fall. Punkte holst du dir durch Struktur, nicht durch Inspiration.",
     html: `
-<p style="font-size:13.5px;line-height:1.6;margin-bottom:12px">Wenn du in der Prüfung einen Fall bekommst, gehe IMMER diese Reihenfolge durch. Das bringt Struktur — und Punkte.</p>
-<ol style="font-size:14px;line-height:1.7;margin-left:20px">
-  <li><strong>Anamnese &amp; Red Flags</strong> — Frage zuerst nach Warnzeichen (nächtl. Ruheschmerz, B-Symptomatik, neurologische Ausfälle, Trauma). <em>Bei Red Flag → keine Trainingsfreigabe, ärztlich abklären.</em></li>
-  <li><strong>Phase / Stadium</strong> — Akut · subakut · chronisch &amp; belastbar. Bestimmt den Fokus.</li>
-  <li><strong>Diagnose &amp; Differenzialdiagnose</strong> — Was ist am wahrscheinlichsten? Was muss ich ausschließen?</li>
-  <li><strong>Funktionsuntersuchung</strong> — Stand, Gang, Bewegungs&shy;screen (Squat, Hinge, Step), spezifische Tests.</li>
-  <li><strong>Ausweich&shy;muster identifizieren</strong> — Wo kompensiert die Klientin? Welche Muskeln arbeiten zu wenig / zu viel?</li>
-  <li><strong>Trainingsziel</strong> — Was soll am Ende der Stunde / des Zyklus besser sein?</li>
-  <li><strong>Trainingsfokus &amp; -inhalte</strong> — Welche Muskeln / Funktionen / Phasen? Welche Übungen, welche Intensität, welcher Umfang?</li>
-  <li><strong>No-Gos / Vorsichtsmaßnahmen</strong> — Was ist tabu (Pressatmung, Stoßbelastung, Endgradigkeit)?</li>
-  <li><strong>Progression</strong> — Wie steigere ich? Welche Kriterien für nächsten Schritt?</li>
-  <li><strong>Begründung</strong> — Warum genau dieses Training? Verknüpfung Anatomie ↔ Pathologie ↔ Trainingsprinzip.</li>
+<ol class="algo-list">
+  <li><strong>Pathologie kurz erklären</strong><div class="algo-hint">Was ist das anatomisch/physiologisch? 1–2 Sätze, klar. „Bandscheibenvorfall heißt: Anulus reißt, Nucleus tritt aus, kann Nerv reizen."</div></li>
+  <li><strong>Red Flags · Freigabe · ärztliche Abklärung</strong><div class="algo-hint">Nächtl. Ruheschmerz, B-Symptomatik, neurol. Ausfälle, Trauma, akute Entzündungszeichen. <em>Bei Red Flag → KEINE Trainingsfreigabe, ärztlich abklären.</em></div></li>
+  <li><strong>Anamnese-Fragen</strong><div class="algo-hint">Seit wann? Wie entstanden? Was lindert/verschlimmert? Vorerkrankungen? Medikamente? Ziele/Erwartung? Sport/Alltag?</div></li>
+  <li><strong>Assessment · Tests</strong><div class="algo-hint">Stand, Gang, Bewegungsscreen (Squat/Hinge/Step), spezifische Tests (MFT, ROM, Schmerzskala), ggf. RR/Puls.</div></li>
+  <li><strong>Trainingsziel ableiten</strong><div class="algo-hint">Konkret + erreichbar: Schmerzfreie Kniebeuge bis Stuhltiefe in 6 Wochen. Treppe schmerzfrei. 20 min gehen ohne Pause.</div></li>
+  <li><strong>Aktivierung · Ansteuerung</strong><div class="algo-hint">Welche Muskeln müssen ÜBERHAUPT erst wahrgenommen werden? Atem, Bracing, Glute Bridge, Scapula Setting, Foot Tripod.</div></li>
+  <li><strong>Kräftigung</strong><div class="algo-hint">Welche Hauptmuskelgruppen? Welche Übungen? Welche Intensität (Last/RPE/%)? Welcher Umfang (Sätze × Wdh)? Welche Frequenz?</div></li>
+  <li><strong>Dehnung · Mobilität</strong><div class="algo-hint">Was ist verkürzt/eingeschränkt? Statisch/dynamisch? Wann (nach Training, getrennt)? Bei akuter Reizung NICHT aggressiv dehnen.</div></li>
+  <li><strong>No-Gos · Vorsicht</strong><div class="algo-hint">Was ist tabu? Pressatmung bei Hypertonie, Flexion+Last bei Bandscheibe, Stoßlast bei Arthrose, Endrange-Rotation bei Spondylo.</div></li>
+  <li><strong>Progression · Regression</strong><div class="algo-hint">Wie steigere ich (Last, ROM, Frequenz, Komplexität)? Kriterien? Wie regressiere ich, wenn Schmerz/Symptom auftaucht?</div></li>
+  <li><strong>Prüfungssatz formulieren</strong><div class="algo-hint">Ein Satz, der Anatomie ↔ Pathologie ↔ Prinzip verknüpft: <em>„Ich priorisiere Achsenkontrolle über Glute med und Quadrizeps, weil die passive Knie-Stabilität nach VKB-Ruptur reduziert ist und aktiv kompensiert werden muss."</em></div></li>
 </ol>
 
-<div class="notice ok" style="margin-top:14px"><strong>Tipp:</strong> Der Begründungssatz am Ende ist Gold. Lieber kurz und klar als ausschweifend. Beispiel: <em>„Ich priorisiere Achsenkontrolle über Glute&nbsp;med und Quadrizeps, weil die passive Knie-Stabilität nach VKB-Ruptur reduziert ist und aktiv kompensiert werden muss."</em></div>
+<div style="margin-top:18px;padding:14px;background:var(--accent-soft);border-radius:10px">
+  <div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-strong);margin-bottom:6px">Notfall-Kürzel</div>
+  <p style="margin:0;font-size:13.5px;line-height:1.6">Wenn du in der Prüfung den Faden verlierst: <strong>PARA-AT-PrüNo-Pro</strong> — <em>Pathologie · Anamnese · Red flags · Assessment · Trainingsziel · Aktivierung · Training (Kraft+Dehn) · Prüfungssatz · No-Gos · Progression</em>. Reihenfolge etwas anders, deckt aber alle 11.</p>
+</div>
 `
   }
 };
+
+/* Algorithm checklist styling (scoped) */
+const _algoCss = document.createElement('style');
+_algoCss.textContent = `
+.algo-list{list-style:none;padding:0;margin:0;counter-reset:algo}
+.algo-list>li{counter-increment:algo;padding:12px 14px 12px 46px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:var(--panel);position:relative;font-size:14.5px;line-height:1.5}
+.algo-list>li:before{content:counter(algo);position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-weight:600;font-size:12px;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif}
+.algo-list>li strong{font-weight:600;display:block;margin-bottom:3px}
+.algo-hint{font-size:13px;color:var(--muted);line-height:1.5}
+.algo-hint em{font-style:italic;color:var(--danger)}
+`;
+document.head.appendChild(_algoCss);
 
 // === QUIZ-MODUL ===
 // Fragetypen:
@@ -2184,7 +2398,13 @@ const DEFAULT_STATE = {
   progress: {},           // by item.id -> { pathologie, assessment, plan, gesamt, notiz, last, next }
   streak: { count:0, lastDate:null },
   todayCaseId: null,
-  todayCaseDate: null
+  todayCaseDate: null,
+  // === Lernplan-Tracking ===
+  dayTasks: {},   // by ISO date -> { deepDive:bool, speedRound:bool, ppt:bool, orga:bool }
+  dayDone:  {},   // by ISO date -> bool (Tag komplett abgehakt)
+  pptDone:  {},   // by ppt nr (1..9) -> { uebung1:bool, uebung2:bool, timer:bool, final:bool }
+  abgabeDone: {}, // by index in ABGABE -> bool
+  planView: null  // ISO date — wenn null, dann immer "echtes heute"
 };
 
 let STATE = JSON.parse(JSON.stringify(DEFAULT_STATE));
@@ -2333,6 +2553,113 @@ function switchView(name){
    DASHBOARD
    ============================================================ */
 
+/* ============================================================
+   LERNPLAN HELPERS
+   ============================================================ */
+
+// Get plan day for given ISO date, fallback to nearest day if today isn't in plan
+function getPlanDay(iso){
+  if(!iso) iso = todayISO();
+  const d = LERNPLAN.days.find(x => x.date === iso);
+  if(d) return d;
+  // Before plan starts → return first day
+  if(iso < LERNPLAN.days[0].date) return LERNPLAN.days[0];
+  // After plan ends → null (exam done or post-exam)
+  return null;
+}
+function getActivePlanDate(){
+  return STATE.planView || todayISO();
+}
+function getDayTasks(iso){
+  if(!STATE.dayTasks[iso]) STATE.dayTasks[iso] = { deepDive:false, speedRound:false, ppt:false, orga:false };
+  return STATE.dayTasks[iso];
+}
+function daysUntil(targetISO){
+  const t = new Date(todayISO()+'T00:00:00');
+  const x = new Date(targetISO+'T00:00:00');
+  return Math.round((x - t) / 86400000);
+}
+function formatDateDE(iso){
+  if(!iso) return '';
+  const [y,m,d] = iso.split('-');
+  return `${d}.${m}.${y}`;
+}
+function weekdayDE(iso){
+  const map = { 'Mon':'Mo', 'Tue':'Di', 'Wed':'Mi', 'Thu':'Do', 'Fri':'Fr', 'Sat':'Sa', 'Sun':'So' };
+  const dt = new Date(iso+'T00:00:00');
+  const en = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][dt.getDay()];
+  return map[en] || en;
+}
+
+// === Theme lookup for Deep Dive / Speed Round buttons ===
+// Excel-Themen-Namen oft mit Zusätzen wie "PFPS / Patellofemoraler Schmerz: Hüfte, Beinachse, Step-down"
+// Lookup-Strategie: zuerst Substring-Match, dann Token-Match
+function findItemByName(name){
+  if(!name) return null;
+  const lo = name.toLowerCase();
+  // 1) Exact match auf item.thema
+  let hit = ITEMS.find(i => i.thema.toLowerCase() === lo);
+  if(hit) return hit;
+  // 2) item.thema appears at start of search text (handles "Bandscheibenvorfall LWS" matching exactly)
+  hit = ITEMS.find(i => lo.startsWith(i.thema.toLowerCase()));
+  if(hit) return hit;
+  // 3) Search text starts with first significant word of item.thema (handles "Tennisellenbogen: ..." matching #60 "Tennisellenbogen / Epicondylitis ...")
+  hit = ITEMS.find(i => {
+    const firstToken = i.thema.toLowerCase().split(/[\s\/,:]/)[0];
+    return firstToken.length > 5 && lo.startsWith(firstToken);
+  });
+  if(hit) return hit;
+  // 4) item.thema appears anywhere in search text
+  hit = ITEMS.find(i => lo.includes(i.thema.toLowerCase()));
+  if(hit) return hit;
+  // 5) Distinctive token shared (length>=6)
+  const tokens = lo.split(/[\s\/,:.()\-]+/).filter(t => t.length >= 6);
+  for(const t of tokens){
+    hit = ITEMS.find(i => i.thema.toLowerCase().includes(t));
+    if(hit) return hit;
+  }
+  return null;
+}
+
+// Open theme by name (Deep Dive / Speed Round buttons)
+function openByName(name){
+  const it = findItemByName(name);
+  if(it) openSheet(it.id, 'lernen');
+  else showThemeFallback(name);
+}
+function showThemeFallback(name){
+  alert(`Kein passendes Excel-Thema für: "${name}"\n\nMögliche Gründe:\n• Thema ist eine Simulation (kein einzelner Fall)\n• Themenformulierung im Lernplan weicht ab\n\nNutze die Pfade-Suche, um manuell zu suchen.`);
+}
+
+// Toggle a task done for current plan day
+function toggleDayTask(taskKey){
+  const iso = getActivePlanDate();
+  const t = getDayTasks(iso);
+  t[taskKey] = !t[taskKey];
+  // Auto-streak bump on any task completion
+  if(t[taskKey]) bumpStreak();
+  saveState();
+  renderHeute();
+}
+function toggleDayDone(){
+  const iso = getActivePlanDate();
+  STATE.dayDone[iso] = !STATE.dayDone[iso];
+  if(STATE.dayDone[iso]){
+    // mark all tasks done
+    const t = getDayTasks(iso);
+    t.deepDive = t.speedRound = t.ppt = t.orga = true;
+    bumpStreak();
+  }
+  saveState();
+  renderHeute();
+}
+function setPlanView(iso){
+  STATE.planView = (iso === todayISO()) ? null : iso;
+  saveState();
+  renderHeute();
+}
+
+
 function pickTodayCase(){
   // Strategy: prefer a Prio-A item, NOT yet "prüfungsreif", earliest lernroute order.
   const t = todayISO();
@@ -2381,35 +2708,46 @@ function renderHeute(){
   const greet = h<6 ? 'Späte Nacht.' : h<11 ? 'Guten Morgen.' : h<14 ? 'Mittag.' : h<18 ? 'Guten Nachmittag.' : h<22 ? 'Guten Abend.' : 'Nacht.';
   document.getElementById('greet').innerHTML = greet + ' <em>Eine Sache reicht.</em>';
 
+  renderDeadlines();
+  renderPlanCard();
+  renderAbgabeCard();
+  renderPptCard();
+
   const dueRev = getDueReviews();
   document.getElementById('greetSub').textContent =
     dueRev.length === 0
       ? 'Heute steht ein neuer Fall an. Keine Wiederholungen fällig.'
-      : `Heute: ein neuer Fall + ${dueRev.length} ${dueRev.length===1?'Wiederholung':'Wiederholungen'}.`;
+      : `Heute: ${dueRev.length} ${dueRev.length===1?'Wiederholung':'Wiederholungen'} fällig.`;
 
-  // Today's case
+  // Today's case (Prio-A nächste Route — eigenständig vom Lernplan)
   const today = pickTodayCase();
   document.getElementById('questHeadline').textContent = today ? today.thema : 'Alle Prio-A-Themen geübt 🎉';
 
-  // Task list
   const tDone1 = STATE.progress[today?.id] && STATE.progress[today.id].last === todayISO();
   const tDone2 = dueRev.length === 0 || dueRev.every(r => STATE.progress[r.id]?.last === todayISO());
   document.getElementById('questTasks').innerHTML = `
-    <div class="quest-task ${tDone1?'done':''}"><span class="qt-tick">${tDone1?'✓':'1'}</span><span>Heutigen Fall durchgehen (${today ? today.kategorie : '—'})</span></div>
+    <div class="quest-task ${tDone1?'done':''}"><span class="qt-tick">${tDone1?'✓':'1'}</span><span>Heutigen Fall durchgehen ${today ? '('+escapeHTML(today.kategorie)+')' : ''}</span></div>
     <div class="quest-task ${tDone2?'done':''}"><span class="qt-tick">${tDone2?'✓':'2'}</span><span>${dueRev.length} ${dueRev.length===1?'fällige Wiederholung':'fällige Wiederholungen'}</span></div>
   `;
   document.getElementById('questStartBtn').textContent = tDone1 ? 'Fall nochmal öffnen' : 'Heutigen Fall öffnen';
+
+  // === Progress: Lernplan ===
+  const planDays = LERNPLAN.days.filter(d => d.phase !== 'Prüfung'); // 21 Lerntage
+  const daysDone = planDays.filter(d => STATE.dayDone[d.date]).length;
+  const deepDone = planDays.filter(d => STATE.dayTasks[d.date]?.deepDive).length;
+  const pptDone = planDays.filter(d => STATE.dayTasks[d.date]?.ppt).length;
+  document.getElementById('progDaysNum').textContent = `${daysDone} / ${planDays.length}`;
+  document.getElementById('progDaysBar').style.width = (100*daysDone/planDays.length).toFixed(0)+'%';
+  document.getElementById('progDeepNum').textContent = `${deepDone} / ${planDays.length}`;
+  document.getElementById('progDeepBar').style.width = (100*deepDone/planDays.length).toFixed(0)+'%';
+  document.getElementById('progPptNum').textContent = `${pptDone} / ${planDays.length}`;
+  document.getElementById('progPptBar').style.width = (100*pptDone/planDays.length).toFixed(0)+'%';
 
   // Progress: Prio A
   const aItems = ITEMS.filter(i => i.prio==='A');
   const aDone  = aItems.filter(i => (STATE.progress[i.id]?.plan ?? 0) >= 3).length;
   document.getElementById('progANum').textContent = `${aDone} / ${aItems.length}`;
   document.getElementById('progABar').style.width = (100*aDone/aItems.length).toFixed(0)+'%';
-
-  // Progress: All
-  const allDone = ITEMS.filter(i => (STATE.progress[i.id]?.plan ?? 0) >= 3).length;
-  document.getElementById('progAllNum').textContent = `${allDone} / ${ITEMS.length}`;
-  document.getElementById('progAllBar').style.width = (100*allDone/ITEMS.length).toFixed(0)+'%';
 
   // Pfad mini grid
   const grid = document.getElementById('pfadMiniGrid');
@@ -2430,6 +2768,234 @@ function renderHeute(){
     rc.querySelector('#todayReviewsList').innerHTML = dueRev.slice(0,6).map(i => themeRowHTML(i)).join('')
       + (dueRev.length > 6 ? `<div class="sub" style="margin-top:8px">… und ${dueRev.length-6} weitere im Reiter „Wiederholen".</div>` : '');
   }
+}
+
+/* === DEADLINES === */
+function renderDeadlines(){
+  const t = todayISO();
+  document.getElementById('ddToday').textContent = formatDateDE(t).slice(0,5);
+  document.getElementById('ddTodayWeekday').textContent = weekdayDE(t);
+
+  const dIdeal = daysUntil(DEADLINE_IDEAL);
+  const dLate  = daysUntil(DEADLINE_LATE);
+  const dExam  = daysUntil(EXAM_DATE);
+
+  const idealEl = document.getElementById('ddIdeal');
+  idealEl.textContent = formatDateDE(DEADLINE_IDEAL).slice(0,5);
+  const idealSub = document.getElementById('ddIdealSub');
+  idealSub.textContent = dIdeal < 0 ? 'vorbei' : (dIdeal === 0 ? 'heute' : `in ${dIdeal} T`);
+  idealSub.className = 'deadline-sub' + (dIdeal >= 0 && dIdeal <= 2 ? ' warn' : '');
+
+  const lateEl = document.getElementById('ddLate');
+  lateEl.textContent = formatDateDE(DEADLINE_LATE).slice(0,5);
+  const lateSub = document.getElementById('ddLateSub');
+  lateSub.textContent = dLate < 0 ? 'vorbei' : (dLate === 0 ? 'heute!' : `in ${dLate} T`);
+  lateSub.className = 'deadline-sub' + (dLate >= 0 && dLate <= 2 ? ' urgent' : (dLate <= 5 ? ' warn' : ''));
+
+  document.getElementById('ddExam').textContent = formatDateDE(EXAM_DATE).slice(0,5);
+  const examSub = document.getElementById('ddExamSub');
+  examSub.textContent = dExam < 0 ? 'vorbei' : (dExam === 0 ? 'HEUTE' : `in ${dExam} T`);
+  examSub.className = 'deadline-sub' + (dExam >= 0 && dExam <= 3 ? ' urgent' : (dExam <= 7 ? ' warn' : ''));
+}
+
+/* === PLAN CARD === */
+function renderPlanCard(){
+  const iso = getActivePlanDate();
+  const day = getPlanDay(iso);
+  const card = document.getElementById('planCard');
+  const t = todayISO();
+  const isExamDay = day && day.phase === 'Prüfung';
+  card.classList.toggle('exam-day', isExamDay);
+
+  document.getElementById('planDate').textContent = day
+    ? `${weekdayDE(day.date)}, ${formatDateDE(day.date)}`
+    : 'Nach der Prüfung 🎉';
+  document.getElementById('planPhase').textContent = day ? day.phase : '';
+
+  const tasksEl = document.getElementById('planTaskList');
+  const actionsEl = document.getElementById('planActions');
+  const metaEl = document.getElementById('planMeta');
+
+  if(!day){
+    tasksEl.innerHTML = '<div class="sub" style="padding:14px 0">Der Plan endet am 13.06.2026. Glückwunsch zur Prüfung.</div>';
+    actionsEl.innerHTML = '';
+    metaEl.innerHTML = '';
+    document.getElementById('planTodayBtn').textContent = STATE.planView ? 'heute' : '·';
+    return;
+  }
+
+  const tasks = getDayTasks(day.date);
+  const dayDone = !!STATE.dayDone[day.date];
+
+  // Build task rows
+  const taskRows = [];
+  if(day.deepDive){
+    const deepItem = findItemByName(day.deepDive);
+    taskRows.push(`
+      <div class="plan-task ${tasks.deepDive?'done':''}">
+        <button class="pt-check ${tasks.deepDive?'done':''}" onclick="toggleDayTask('deepDive')" aria-label="Erledigt"></button>
+        <div class="pt-main">
+          <div class="pt-label">Prio-A Deep Dive</div>
+          <div class="pt-text">${escapeHTML(day.deepDive)}</div>
+        </div>
+        ${deepItem ? `<button class="pt-action" onclick="openSheet('${deepItem.id}','lernen')">öffnen →</button>` : `<button class="pt-action" onclick="planTaskFallback('deepDive')">?</button>`}
+      </div>`);
+  }
+  if(day.speedRound){
+    const spItem = findItemByName(day.speedRound);
+    taskRows.push(`
+      <div class="plan-task ${tasks.speedRound?'done':''}">
+        <button class="pt-check ${tasks.speedRound?'done':''}" onclick="toggleDayTask('speedRound')" aria-label="Erledigt"></button>
+        <div class="pt-main">
+          <div class="pt-label">Prio-B Speed Round</div>
+          <div class="pt-text">${escapeHTML(day.speedRound)}</div>
+        </div>
+        ${spItem ? `<button class="pt-action" onclick="openSheet('${spItem.id}','lernen')">öffnen →</button>` : `<button class="pt-action" onclick="planTaskFallback('speedRound')">?</button>`}
+      </div>`);
+  }
+  if(day.ppt){
+    taskRows.push(`
+      <div class="plan-task ${tasks.ppt?'done':''}">
+        <button class="pt-check ${tasks.ppt?'done':''}" onclick="toggleDayTask('ppt')" aria-label="Erledigt"></button>
+        <div class="pt-main">
+          <div class="pt-label">PPT-Übung</div>
+          <div class="pt-text">${escapeHTML(day.ppt)}</div>
+        </div>
+      </div>`);
+  }
+  if(day.orga){
+    taskRows.push(`
+      <div class="plan-task ${tasks.orga?'done':''}">
+        <button class="pt-check ${tasks.orga?'done':''}" onclick="toggleDayTask('orga')" aria-label="Erledigt"></button>
+        <div class="pt-main">
+          <div class="pt-label">Abgabe / Orga</div>
+          <div class="pt-text">${escapeHTML(day.orga)}</div>
+        </div>
+      </div>`);
+  }
+  tasksEl.innerHTML = taskRows.join('');
+
+  metaEl.innerHTML = `
+    <span><strong>${day.lernzeit || 0} h</strong> geplant</span>
+    <span><strong>Minimum:</strong> ${escapeHTML(day.minimum || '')}</span>
+  `;
+
+  actionsEl.innerHTML = `
+    <button class="btn ${dayDone?'ok':'primary'} sm" onclick="toggleDayDone()">${dayDone?'✓ Tag erledigt':'Tag als erledigt markieren'}</button>
+  `;
+
+  document.getElementById('planTodayBtn').textContent = (day.date === t) ? '·' : 'heute';
+}
+
+function escapeAttr(s){ return String(s).replace(/'/g, "\\'").replace(/"/g, '&quot;'); }
+
+function planTaskFallback(taskKey){
+  const day = getPlanDay(getActivePlanDate());
+  if(!day) return;
+  const name = day[taskKey] || '';
+  showThemeFallback(name);
+}
+
+function planPrev(){
+  const cur = getActivePlanDate();
+  const idx = LERNPLAN.days.findIndex(d => d.date === cur);
+  if(idx > 0){ setPlanView(LERNPLAN.days[idx-1].date); }
+  else if(idx === -1){ setPlanView(LERNPLAN.days[0].date); }
+}
+function planNext(){
+  const cur = getActivePlanDate();
+  const idx = LERNPLAN.days.findIndex(d => d.date === cur);
+  if(idx >= 0 && idx < LERNPLAN.days.length-1){ setPlanView(LERNPLAN.days[idx+1].date); }
+}
+function planToday(){ setPlanView(todayISO()); }
+
+/* === ABGABE-CHECKLISTE === */
+const ABGABE_TASKS = [
+  { bereich:'PPT',           task:'Alle 9 Präsentationen öffnen und Dateinamen prüfen', ziel:'2026-05-24' },
+  { bereich:'PPT',           task:'Themen final entscheiden / ggf. ändern',              ziel:'2026-05-24', note:'Falls unsicher: jetzt, nicht am 30.' },
+  { bereich:'PPT',           task:'PPTs als abgabefähige Version speichern/exportieren', ziel:'2026-05-25' },
+  { bereich:'Trainingspläne',task:'100 Trainingspläne zählen und Lesbarkeit prüfen',     ziel:'2026-05-25' },
+  { bereich:'Trainingspläne',task:'Dateinamen/Ordnerstruktur sauber',                    ziel:'2026-05-25' },
+  { bereich:'Abgabe',        task:'Mail/Upload vorbereiten',                             ziel:'2026-05-25' },
+  { bereich:'Abgabe',        task:'Idealer Versand an PTA',                              ziel:'2026-05-25', note:'Früh abgeben = Kopf frei + Zeit für Rückmeldung' },
+  { bereich:'Puffer',        task:'Rückmeldung PTA / Themenänderung falls nötig',        ziel:'2026-05-26' },
+  { bereich:'Puffer',        task:'Letzte Korrekturen / Nachreichung',                   ziel:'2026-05-29' },
+  { bereich:'Deadline',      task:'Absolute Deadline',                                   ziel:'2026-05-30', note:'Nur noch Notfallpuffer' }
+];
+
+function renderAbgabeCard(){
+  const list = document.getElementById('abgabeList');
+  if(!list) return;
+  const done = ABGABE_TASKS.filter((_,i) => STATE.abgabeDone[i]).length;
+  document.getElementById('abgabeBadge').textContent = `${done} / ${ABGABE_TASKS.length}`;
+  document.getElementById('abgabeBadge').className = done === ABGABE_TASKS.length ? 'badge ok' : 'badge';
+
+  list.innerHTML = ABGABE_TASKS.map((a,i) => {
+    const isDone = !!STATE.abgabeDone[i];
+    const dleft = daysUntil(a.ziel);
+    const urgent = !isDone && dleft <= 2;
+    return `<div class="abgabe-item ${isDone?'done':''}">
+      <button class="pt-check ${isDone?'done':''}" onclick="toggleAbgabe(${i})" aria-label="Erledigt"></button>
+      <div class="abgabe-item-main">
+        <div class="ab-bereich">${escapeHTML(a.bereich)}</div>
+        <div class="ab-task">${escapeHTML(a.task)}</div>
+        <div class="ab-meta ${urgent?'urgent':''}">
+          ${formatDateDE(a.ziel)}${dleft<0 ? ' · vorbei' : (dleft===0 ? ' · heute' : ' · in '+dleft+' T')}${a.note ? ' · '+escapeHTML(a.note) : ''}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+function toggleAbgabe(i){
+  STATE.abgabeDone[i] = !STATE.abgabeDone[i];
+  if(STATE.abgabeDone[i]) bumpStreak();
+  saveState();
+  renderAbgabeCard();
+}
+
+/* === PPT-Tracker === */
+const PPT_STAGES = [
+  { key:'d1', label:'1.' },
+  { key:'d2', label:'2.' },
+  { key:'tm', label:'⏱' },
+  { key:'fn', label:'✓' }
+];
+function getPpt(nr){
+  if(!STATE.pptDone[nr]) STATE.pptDone[nr] = { d1:false, d2:false, tm:false, fn:false };
+  return STATE.pptDone[nr];
+}
+function renderPptCard(){
+  const list = document.getElementById('pptList');
+  if(!list) return;
+  // "abgeschlossen" = alle 4 Stufen erledigt
+  const done = Array.from({length:9}, (_,i)=>i+1).filter(n => {
+    const p = STATE.pptDone[n];
+    return p && p.d1 && p.d2 && p.tm && p.fn;
+  }).length;
+  document.getElementById('pptBadge').textContent = `${done} / 9`;
+  document.getElementById('pptBadge').className = done === 9 ? 'badge ok' : 'badge';
+
+  list.innerHTML = Array.from({length:9}, (_,i) => {
+    const nr = i+1;
+    const p = getPpt(nr);
+    const allDone = p.d1 && p.d2 && p.tm && p.fn;
+    return `<div class="ppt-row ${allDone?'done':''}">
+      <div class="ppt-num">${nr}</div>
+      <div class="ppt-main">
+        <div style="font-size:14px;font-weight:500">PPT ${nr}</div>
+      </div>
+      <div class="ppt-stages">
+        ${PPT_STAGES.map(s => `<button class="ppt-stage ${p[s.key]?'done':''}" onclick="togglePpt(${nr},'${s.key}')" title="${s.key==='d1'?'1. Durchgang':s.key==='d2'?'2. Durchgang':s.key==='tm'?'Timer-Probe':'Finalprobe'}">${s.label}</button>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
+}
+function togglePpt(nr, key){
+  const p = getPpt(nr);
+  p[key] = !p[key];
+  if(p[key]) bumpStreak();
+  saveState();
+  renderPptCard();
 }
 
 /* ============================================================
@@ -2806,8 +3372,14 @@ function renderTheorie(){
     el.innerHTML = renderMuskelnList();
     return;
   }
-  let content = (typeof THEORIE !== 'undefined' && THEORIE[tab]) ? THEORIE[tab] : '<p>Inhalt folgt.</p>';
-  el.innerHTML = content;
+  const t = (typeof THEORIE !== 'undefined') ? THEORIE[tab] : null;
+  if(!t){ el.innerHTML = '<p class="sub">Inhalt folgt.</p>'; return; }
+  // Schema: {title, sub, html}
+  el.innerHTML = `
+    <h3 style="font-family:'Fraunces',serif;font-weight:300;font-size:22px;margin-bottom:4px">${escapeHTML(t.title || '')}</h3>
+    <p class="sub" style="margin-bottom:14px">${escapeHTML(t.sub || '')}</p>
+    ${t.html || ''}
+  `;
 }
 
 document.addEventListener('click', e => {
